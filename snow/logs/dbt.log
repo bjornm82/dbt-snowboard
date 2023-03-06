@@ -964,3 +964,146 @@ Update your versions in packages.yml, then run dbt deps
 Update your versions in packages.yml, then run dbt deps
 [0m15:32:49.461445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060268f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006026380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006027490>]}
 [0m15:32:49.465259 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-06 15:43:15.673538 | cc985b24-ff50-4226-bfb2-ab82684fcfec ==============================
+[0m15:43:15.673538 [info ] [MainThread]: Running with dbt=1.4.4
+[0m15:43:15.684590 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m15:43:15.689015 [debug] [MainThread]: Tracking: tracking
+[0m15:43:15.720756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006076a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006075120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006076b90>]}
+[0m15:43:15.730812 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-kb3d4hly'
+[0m15:43:15.735503 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:43:16.020459 [debug] [MainThread]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)')))
+[0m15:43:16.025735 [debug] [MainThread]: Retrying external call. Attempt: 0 Max attempts: 5
+[0m15:43:17.037083 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:43:17.213092 [debug] [MainThread]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)')))
+[0m15:43:17.218955 [debug] [MainThread]: Retrying external call. Attempt: 1 Max attempts: 5
+[0m15:43:18.229038 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:43:18.446925 [debug] [MainThread]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)')))
+[0m15:43:18.452290 [debug] [MainThread]: Retrying external call. Attempt: 2 Max attempts: 5
+[0m15:43:19.463981 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:43:19.670817 [debug] [MainThread]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)')))
+[0m15:43:19.677991 [debug] [MainThread]: Retrying external call. Attempt: 3 Max attempts: 5
+[0m15:43:20.690415 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:43:20.891628 [debug] [MainThread]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)')))
+[0m15:43:20.896913 [debug] [MainThread]: Retrying external call. Attempt: 4 Max attempts: 5
+[0m15:43:21.905921 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:43:22.134256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006076b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060bc3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060be2f0>]}
+[0m15:43:22.139283 [debug] [MainThread]: Flushing usage events
+[0m15:43:22.635642 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m15:43:22.643188 [error] [MainThread]: Encountered an error:
+External connection exception occurred: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:997)')))
+
+
+============================== 2023-03-06 15:43:44.429756 | 67805cc0-e638-48f7-b6f0-1ef1349f8f96 ==============================
+[0m15:43:44.429756 [info ] [MainThread]: Running with dbt=1.4.4
+[0m15:43:44.441570 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m15:43:44.444793 [debug] [MainThread]: Tracking: tracking
+[0m15:43:44.477917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006076a40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060750f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006076bc0>]}
+[0m15:43:44.488697 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-hz12q6s3'
+[0m15:43:44.492533 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:43:44.764544 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m15:43:44.771281 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m15:43:44.906186 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m15:43:44.936837 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m15:43:44.940584 [debug] [MainThread]: Executing "git --version"
+[0m15:43:44.968323 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m15:43:44.972295 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:44.977535 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m15:43:47.061393 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:47.066501 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m15:43:47.071202 [debug] [MainThread]: Executing "git sparse-checkout set mark"
+[0m15:43:48.042362 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:48.047512 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:48.052326 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m15:43:48.055542 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:43:48.087792 [debug] [MainThread]: STDOUT: "b'd8bb69530c908b9dda48e5d647870d0ed2ad6bac\n'"
+[0m15:43:48.091781 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:48.095353 [debug] [MainThread]:   Checking out revision 0.0.4.
+[0m15:43:48.098768 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.4"
+[0m15:43:48.139250 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:48.143682 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:48.147491 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.4"
+[0m15:43:49.451491 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:49.456838 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.4      -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n'"
+[0m15:43:49.460528 [debug] [MainThread]: Executing "git tag --list"
+[0m15:43:49.495968 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n'"
+[0m15:43:49.499980 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:49.504175 [debug] [MainThread]: Executing "git reset --hard tags/0.0.4"
+[0m15:43:49.571820 [debug] [MainThread]: STDOUT: "b'HEAD is now at d8bb695 adding some alias\n'"
+[0m15:43:49.577136 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:49.580774 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:43:49.617720 [debug] [MainThread]: STDOUT: "b'd8bb69530c908b9dda48e5d647870d0ed2ad6bac\n'"
+[0m15:43:49.621985 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:49.626544 [debug] [MainThread]:   Checked out at d8bb695.
+[0m15:43:49.692178 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m15:43:49.696005 [debug] [MainThread]: Executing "git --version"
+[0m15:43:49.721865 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m15:43:49.726100 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:49.729929 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m15:43:49.755951 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:49.760420 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m15:43:49.764140 [debug] [MainThread]: command return code=128
+[0m15:43:49.770354 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m15:43:49.774121 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:43:49.805367 [debug] [MainThread]: STDOUT: "b'd8bb69530c908b9dda48e5d647870d0ed2ad6bac\n'"
+[0m15:43:49.809183 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:49.812929 [debug] [MainThread]:   Checking out revision 0.0.4.
+[0m15:43:49.818101 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.4"
+[0m15:43:49.858976 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:49.863300 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:49.866868 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.4"
+[0m15:43:50.954243 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:50.958887 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.4      -> FETCH_HEAD\n'"
+[0m15:43:50.962454 [debug] [MainThread]: Executing "git tag --list"
+[0m15:43:51.003422 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n'"
+[0m15:43:51.007402 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:51.010922 [debug] [MainThread]: Executing "git reset --hard tags/0.0.4"
+[0m15:43:51.068054 [debug] [MainThread]: STDOUT: "b'HEAD is now at d8bb695 adding some alias\n'"
+[0m15:43:51.072822 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:51.077295 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:43:51.114249 [debug] [MainThread]: STDOUT: "b'd8bb69530c908b9dda48e5d647870d0ed2ad6bac\n'"
+[0m15:43:51.117926 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:51.121726 [debug] [MainThread]: Already at d8bb695, nothing to do.
+[0m15:43:51.161612 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m15:43:55.905966 [info ] [MainThread]:   Installed from version 0.9.6
+[0m15:43:55.911288 [info ] [MainThread]:   Updated version available: 1.0.0
+[0m15:43:55.915582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '67805cc0-e638-48f7-b6f0-1ef1349f8f96', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006025a80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006026e30>]}
+[0m15:43:55.920318 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-marketing.git
+[0m15:43:55.950456 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m15:43:55.954165 [debug] [MainThread]: Executing "git --version"
+[0m15:43:55.980241 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m15:43:55.984366 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:55.988259 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m15:43:56.017052 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:56.021415 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m15:43:56.024371 [debug] [MainThread]: command return code=128
+[0m15:43:56.029244 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m15:43:56.033257 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:43:56.066214 [debug] [MainThread]: STDOUT: "b'd8bb69530c908b9dda48e5d647870d0ed2ad6bac\n'"
+[0m15:43:56.070350 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:56.074211 [debug] [MainThread]:   Checking out revision 0.0.4.
+[0m15:43:56.076788 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.4"
+[0m15:43:56.116840 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:56.121426 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:56.125320 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.4"
+[0m15:43:57.230432 [debug] [MainThread]: STDOUT: "b''"
+[0m15:43:57.234966 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.4      -> FETCH_HEAD\n'"
+[0m15:43:57.239106 [debug] [MainThread]: Executing "git tag --list"
+[0m15:43:57.278118 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n'"
+[0m15:43:57.283528 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:57.287280 [debug] [MainThread]: Executing "git reset --hard tags/0.0.4"
+[0m15:43:57.345843 [debug] [MainThread]: STDOUT: "b'HEAD is now at d8bb695 adding some alias\n'"
+[0m15:43:57.350817 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:57.355409 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:43:57.390910 [debug] [MainThread]: STDOUT: "b'd8bb69530c908b9dda48e5d647870d0ed2ad6bac\n'"
+[0m15:43:57.395797 [debug] [MainThread]: STDERR: "b''"
+[0m15:43:57.399683 [debug] [MainThread]: Already at d8bb695, nothing to do.
+[0m15:43:57.485904 [info ] [MainThread]:   Installed from revision 0.0.4
+[0m15:43:57.489344 [info ] [MainThread]:    and subdirectory mark
+[0m15:43:57.493487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '67805cc0-e638-48f7-b6f0-1ef1349f8f96', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006026410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006026710>]}
+[0m15:43:57.497648 [info ] [MainThread]: 
+[0m15:43:57.501536 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m15:43:57.509333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060264a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006026710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006025b10>]}
+[0m15:43:57.513099 [debug] [MainThread]: Flushing usage events
