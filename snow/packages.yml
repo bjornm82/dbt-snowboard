@@ -3,4 +3,4 @@ packages:
     version: 0.9.6
   - git: https://github.com/bjornm82/dbt-marketing.git
     subdirectory: "mark"
-    revision: 0.0.1
+    revision: 0.0.4

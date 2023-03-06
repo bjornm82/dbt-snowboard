@@ -36,6 +36,10 @@ push:
 dbt-deps:
 	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} deps
 
+.PHONY: dbt-clean
+dbt-clean:
+	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} clean
+
 .PHONY: dbt-run
 dbt-run:
 	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} run

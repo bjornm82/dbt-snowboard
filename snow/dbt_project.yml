@@ -18,4 +18,4 @@ clean-targets:
 
 models:
   snow:
-    +database: "{{env_var('PROJECT_NAME')}}_DEV_DATA"
+    +database: "BJORN_TEST_UNIT"

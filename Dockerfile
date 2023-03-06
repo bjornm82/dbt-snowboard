@@ -15,6 +15,7 @@ ARG PROJECT_NAME
 
 COPY ${PROJECT_NAME}/dbt_project.yml /usr/app/${PROJECT_NAME}/dbt_project.yml
 COPY ${PROJECT_NAME}/packages.yml /usr/app/${PROJECT_NAME}/packages.yml
+COPY ${PROJECT_NAME}/dbt_packages /usr/app/${PROJECT_NAME}/dbt_packages
 
 WORKDIR /usr/app/${PROJECT_NAME}
 
