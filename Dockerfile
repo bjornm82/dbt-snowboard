@@ -17,3 +17,5 @@ COPY ${PROJECT_NAME}/dbt_project.yml /usr/app/${PROJECT_NAME}/dbt_project.yml
 COPY ${PROJECT_NAME}/packages.yml /usr/app/${PROJECT_NAME}/packages.yml
 
 WORKDIR /usr/app/${PROJECT_NAME}
+
+# ENTRYPOINT [ "/bin/bash" ]

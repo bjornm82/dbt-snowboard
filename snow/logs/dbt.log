@@ -148,3 +148,126 @@ There are 1 unused configuration paths:
 [0m14:21:09.215795 [debug] [MainThread]: Command end result
 [0m14:21:09.278970 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4002170070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005218c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400419c550>]}
 [0m14:21:09.282883 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-06 15:08:46.209479 | e493a93c-9967-4534-9697-827615ee3ee1 ==============================
+[0m15:08:46.209479 [info ] [MainThread]: Running with dbt=1.4.4
+[0m15:08:46.221439 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m15:08:46.225693 [debug] [MainThread]: Tracking: tracking
+[0m15:08:46.258066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006071240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006072d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006070f10>]}
+[0m15:08:46.267892 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-zycie2sh'
+[0m15:08:46.272154 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:08:46.553533 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m15:08:46.558867 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m15:08:46.723291 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m15:08:46.754322 [debug] [MainThread]: Executing "git clone --depth 1 https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m15:08:47.910923 [debug] [MainThread]: STDOUT: "b''"
+[0m15:08:47.916170 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m15:08:47.921765 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m15:08:47.925137 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:08:47.957055 [debug] [MainThread]: STDOUT: "b'427ea71dd0d7393b28c6ea737286cd9575508fba\n'"
+[0m15:08:47.961018 [debug] [MainThread]: STDERR: "b''"
+[0m15:08:47.964699 [debug] [MainThread]:   Checking out revision 0.0.1.
+[0m15:08:47.968179 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.1"
+[0m15:08:48.011700 [debug] [MainThread]: STDOUT: "b''"
+[0m15:08:48.016861 [debug] [MainThread]: STDERR: "b''"
+[0m15:08:48.021313 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.1"
+[0m15:08:49.139908 [debug] [MainThread]: STDOUT: "b''"
+[0m15:08:49.145193 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.1      -> FETCH_HEAD\n'"
+[0m15:08:49.148743 [debug] [MainThread]: Executing "git tag --list"
+[0m15:08:49.189302 [debug] [MainThread]: STDOUT: "b'0.0.1\n'"
+[0m15:08:49.193861 [debug] [MainThread]: STDERR: "b''"
+[0m15:08:49.198694 [debug] [MainThread]: Executing "git reset --hard tags/0.0.1"
+[0m15:08:49.258379 [debug] [MainThread]: STDOUT: "b'HEAD is now at 427ea71 first commit\n'"
+[0m15:08:49.263935 [debug] [MainThread]: STDERR: "b''"
+[0m15:08:49.267271 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:08:49.306062 [debug] [MainThread]: STDOUT: "b'427ea71dd0d7393b28c6ea737286cd9575508fba\n'"
+[0m15:08:49.311302 [debug] [MainThread]: STDERR: "b''"
+[0m15:08:49.316819 [debug] [MainThread]:   Checked out at 427ea71.
+[0m15:08:49.324363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006070f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060730d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006072c80>]}
+[0m15:08:49.329332 [debug] [MainThread]: Flushing usage events
+[0m15:08:50.013962 [error] [MainThread]: Encountered an error:
+Runtime Error
+  no dbt_project.yml found at expected path /tmp/dbt-downloads-zycie2sh/e26f0c51fdd0ebb3cbb7f2b351672b0b/dbt_project.yml
+
+
+============================== 2023-03-06 15:09:30.233153 | 60690cf3-547c-4dc1-9bcc-59cce1d7f438 ==============================
+[0m15:09:30.233153 [info ] [MainThread]: Running with dbt=1.4.4
+[0m15:09:30.244725 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m15:09:30.248818 [debug] [MainThread]: Tracking: tracking
+[0m15:09:30.282821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006076a40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006075210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060754b0>]}
+[0m15:09:30.293693 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-t9wejci_'
+[0m15:09:30.298132 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:09:30.561922 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m15:09:30.567365 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m15:09:30.703916 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m15:09:30.733690 [debug] [MainThread]: Executing "git clone --depth 1 https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m15:09:31.896526 [debug] [MainThread]: STDOUT: "b''"
+[0m15:09:31.903091 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m15:09:31.908232 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m15:09:31.913500 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:09:31.948215 [debug] [MainThread]: STDOUT: "b'427ea71dd0d7393b28c6ea737286cd9575508fba\n'"
+[0m15:09:31.952619 [debug] [MainThread]: STDERR: "b''"
+[0m15:09:31.956909 [debug] [MainThread]:   Checking out revision 0.0.1.
+[0m15:09:31.960121 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.1"
+[0m15:09:32.001866 [debug] [MainThread]: STDOUT: "b''"
+[0m15:09:32.006401 [debug] [MainThread]: STDERR: "b''"
+[0m15:09:32.010181 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.1"
+[0m15:09:33.151495 [debug] [MainThread]: STDOUT: "b''"
+[0m15:09:33.157011 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.1      -> FETCH_HEAD\n'"
+[0m15:09:33.161126 [debug] [MainThread]: Executing "git tag --list"
+[0m15:09:33.202395 [debug] [MainThread]: STDOUT: "b'0.0.1\n'"
+[0m15:09:33.206750 [debug] [MainThread]: STDERR: "b''"
+[0m15:09:33.211000 [debug] [MainThread]: Executing "git reset --hard tags/0.0.1"
+[0m15:09:33.273234 [debug] [MainThread]: STDOUT: "b'HEAD is now at 427ea71 first commit\n'"
+[0m15:09:33.279526 [debug] [MainThread]: STDERR: "b''"
+[0m15:09:33.283212 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:09:33.316162 [debug] [MainThread]: STDOUT: "b'427ea71dd0d7393b28c6ea737286cd9575508fba\n'"
+[0m15:09:33.319986 [debug] [MainThread]: STDERR: "b''"
+[0m15:09:33.323667 [debug] [MainThread]:   Checked out at 427ea71.
+[0m15:09:33.328497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060754b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006077130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006074ac0>]}
+[0m15:09:33.332633 [debug] [MainThread]: Flushing usage events
+[0m15:09:33.902316 [error] [MainThread]: Encountered an error:
+Runtime Error
+  no dbt_project.yml found at expected path /tmp/dbt-downloads-t9wejci_/e26f0c51fdd0ebb3cbb7f2b351672b0b/dbt_project.yml
+
+
+============================== 2023-03-06 15:11:41.799493 | 1227d56c-9ffa-4f06-b985-5af3df54cc7d ==============================
+[0m15:11:41.799493 [info ] [MainThread]: Running with dbt=1.4.4
+[0m15:11:41.810271 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m15:11:41.813691 [debug] [MainThread]: Tracking: tracking
+[0m15:11:41.845215 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006072c80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060713c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006071630>]}
+[0m15:11:41.854375 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-tk5lc7od'
+[0m15:11:41.859738 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:11:42.131291 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m15:11:42.136944 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m15:11:42.279277 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m15:11:42.309127 [debug] [MainThread]: Executing "git clone --depth 1 https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m15:11:43.415992 [debug] [MainThread]: STDOUT: "b''"
+[0m15:11:43.420947 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m15:11:43.425312 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m15:11:43.429521 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:11:43.462865 [debug] [MainThread]: STDOUT: "b'427ea71dd0d7393b28c6ea737286cd9575508fba\n'"
+[0m15:11:43.467258 [debug] [MainThread]: STDERR: "b''"
+[0m15:11:43.470527 [debug] [MainThread]:   Checking out revision 0.0.1.
+[0m15:11:43.473992 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.1"
+[0m15:11:43.515572 [debug] [MainThread]: STDOUT: "b''"
+[0m15:11:43.519576 [debug] [MainThread]: STDERR: "b''"
+[0m15:11:43.523274 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.1"
+[0m15:11:44.682286 [debug] [MainThread]: STDOUT: "b''"
+[0m15:11:44.686977 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.1      -> FETCH_HEAD\n'"
+[0m15:11:44.691295 [debug] [MainThread]: Executing "git tag --list"
+[0m15:11:44.731147 [debug] [MainThread]: STDOUT: "b'0.0.1\n'"
+[0m15:11:44.735587 [debug] [MainThread]: STDERR: "b''"
+[0m15:11:44.741177 [debug] [MainThread]: Executing "git reset --hard tags/0.0.1"
+[0m15:11:44.801264 [debug] [MainThread]: STDOUT: "b'HEAD is now at 427ea71 first commit\n'"
+[0m15:11:44.805958 [debug] [MainThread]: STDERR: "b''"
+[0m15:11:44.810178 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m15:11:44.844978 [debug] [MainThread]: STDOUT: "b'427ea71dd0d7393b28c6ea737286cd9575508fba\n'"
+[0m15:11:44.849576 [debug] [MainThread]: STDERR: "b''"
+[0m15:11:44.855382 [debug] [MainThread]:   Checked out at 427ea71.
+[0m15:11:44.860995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006071630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40060733a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4006071c00>]}
+[0m15:11:44.864736 [debug] [MainThread]: Flushing usage events
+[0m15:11:45.491098 [error] [MainThread]: Encountered an error:
+Runtime Error
+  no dbt_project.yml found at expected path /tmp/dbt-downloads-tk5lc7od/e26f0c51fdd0ebb3cbb7f2b351672b0b/dbt_project.yml
