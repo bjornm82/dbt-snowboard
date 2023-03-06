@@ -1,5 +1,5 @@
-ARG VERSION=
-FROM ghcr.io/dbt-labs/dbt-core:$VERSION
+ARG DBT_VERSION
+FROM ghcr.io/dbt-labs/dbt-core:${DBT_VERSION}
 
 RUN apt-get update
 RUN apt-get install unixodbc-dev -y \

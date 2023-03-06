@@ -7,8 +7,8 @@ GIT_VERSION ?= $(shell git rev-parse --abbrev-ref HEAD)
 
 # Version definitions, project is our version, dbt is version of dbt to use
 PROJECT_NAME?=snow
-DBT_VERSION?=latest
-PROJECT_VERSION?=prd
+DBT_VERSION?=1.4.1
+PROJECT_VERSION?=0.0.1
 VERSION=${DBT_VERSION}_${PROJECT_VERSION}
 
 HUB?=docker.for.mac.localhost:5001
@@ -22,7 +22,7 @@ VOLUMES?=-v ${VOLUME_PROFILE} -v ${VOLUME_PROJECT}
 
 .PHONY: build
 build:
-	docker build --build-arg PROJECT_NAME=${PROJECT_NAME} --build-arg VERSION=${DBT_VERSION} --platform ${PLATFORM} -t ${IMAGE}:${VERSION} .
+	docker build --build-arg PROJECT_NAME=${PROJECT_NAME} --build-arg DBT_VERSION=${DBT_VERSION} --platform ${PLATFORM} -t ${IMAGE}:${VERSION} .
 
 .PHONY: login
 login:
@@ -44,3 +44,10 @@ dbt-clean:
 dbt-run:
 	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} run
 
+.PHONY: dbt-generate
+dbt-generate:
+	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} docs generate
+
+.PHONY: dbt-serve
+dbt-serve:
+	docker run -p 8082:8082 --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} docs serve --port 8082
