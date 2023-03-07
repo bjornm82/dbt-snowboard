@@ -2222,3 +2222,17 @@ with tables as (
 [0m16:06:24.915400 [debug] [MainThread]: Flushing usage events
 [0m16:06:25.510810 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
 [0m16:06:25.518509 [debug] [MainThread]: Connection 'BJORN_TEST_UNIT.information_schema' was properly closed.
+
+
+============================== 2023-03-06 16:07:37.705460 | eb1d8461-237c-4254-bad5-9b4ad8f775ad ==============================
+[0m16:07:37.705460 [info ] [MainThread]: Running with dbt=1.4.1
+[0m16:07:37.720398 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'port': 8082, 'open_browser': True, 'which': 'serve', 'indirect_selection': 'eager'}
+[0m16:07:37.726575 [debug] [MainThread]: Tracking: tracking
+[0m16:07:37.732589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075f3dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075f39a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075f3820>]}
+[0m16:07:37.800225 [info ] [MainThread]: Serving docs at 0.0.0.0:8082
+[0m16:07:37.804827 [info ] [MainThread]: To access from your browser, navigate to:  http://localhost:8082
+[0m16:07:37.808586 [info ] [MainThread]: 
+[0m16:07:37.813003 [info ] [MainThread]: 
+[0m16:07:37.819383 [info ] [MainThread]: Press Ctrl+C to exit.
+[0m16:21:00.794300 [debug] [MainThread]: Flushing usage events
+[0m16:21:01.499681 [info ] [MainThread]: ctrl-c
