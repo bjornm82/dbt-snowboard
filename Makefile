@@ -1,3 +1,9 @@
+# Init variables
+GIT_VERSION ?= $(shell git describe --tags --always)
+GIT_COMMIT ?= $(shell git rev-parse HEAD)
+GIT_COMMIT_SHORT ?= $(shell git rev-parse --short HEAD)
+BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
+
 # Platform can be overwritten, the platform type arm64 is used for M1 silicon chips
 # of apple
 PLATFORM?=linux/amd64
@@ -19,6 +25,10 @@ IMAGE?=${HUB}/${REPO}
 VOLUME_PROFILE?=~/.dbt/profiles.yml:/root/.dbt/profiles.yml
 VOLUME_PROJECT?=$(PWD)/${PROJECT_NAME}:/usr/app/${PROJECT_NAME}
 VOLUMES?=-v ${VOLUME_PROFILE} -v ${VOLUME_PROJECT}
+
+.PHONY: echo_version
+echo_version:
+	echo ${VERSION}
 
 .PHONY: build
 build:
