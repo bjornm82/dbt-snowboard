@@ -22,14 +22,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - 
+      -
         name: Install dependencies
         run: make
-        
       -
-        name: Build and push
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: bjornmooijekind/dbt-snowboard:latest
+        name: build docker image
+        run: make build
+      -
+        name: push docker image
+        run: make push
+      # -
+      #   name: Build and push
+      #   uses: docker/build-push-action@v4
+      #   with:
+      #     push: true
+      #     tags: bjornmooijekind/dbt-snowboard:latest
