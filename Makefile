@@ -1,6 +1,6 @@
 # Platform can be overwritten, the platform type arm64 is used for M1 silicon chips
 # of apple
-PLATFORM?=linux/arm64/v8
+PLATFORM?=linux/amd64
 
 # GIT branch name
 GIT_VERSION ?= $(shell git rev-parse --abbrev-ref HEAD)
