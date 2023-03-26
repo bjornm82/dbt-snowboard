@@ -3,7 +3,7 @@ packages:
     version: 0.9.6
   - git: https://github.com/bjornm82/dbt-marketing.git
     subdirectory: "mark"
-    revision: "{{env_var('DBT_MARK_BRANCH','0.0.6')}}"
+    revision: "{{env_var('DBT_MARK_BRANCH','HEAD')}}"
   - git: https://github.com/bjornm82/dbt-finance.git
     subdirectory: "fina"
     revision: "{{env_var('DBT_FINA_BRANCH','0.0.1')}}"
