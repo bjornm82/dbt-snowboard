@@ -34,9 +34,14 @@ echo_version:
 build:
 	docker build --build-arg PROJECT_NAME=${PROJECT_NAME} --build-arg DBT_VERSION=${DBT_VERSION} --platform ${PLATFORM} -t ${IMAGE}:${VERSION} .
 
+.PHONY: tag-latest
+tag-latest:
+	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
+
 .PHONY: push
 push:
-	docker push ${IMAGE}:${VERSION}
+	docker push ${IMAGE}:${VERSION} && \
+	docker push ${IMAGE}:latest
 
 .PHONY: dbt-deps
 dbt-deps:

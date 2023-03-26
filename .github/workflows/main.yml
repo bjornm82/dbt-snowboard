@@ -29,11 +29,8 @@ jobs:
         name: build docker image
         run: make build
       -
+        name: tag docker image latest
+        run: make tag-latest
+      -
         name: push docker image
         run: make push
-      # -
-      #   name: Build and push
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #     push: true
-      #     tags: bjornmooijekind/dbt-snowboard:latest
