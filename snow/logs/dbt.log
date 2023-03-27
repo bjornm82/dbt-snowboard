@@ -5424,3 +5424,328 @@ where id = 1
 Update your versions in packages.yml, then run dbt deps
 [0m08:29:55.265918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4a740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a11ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a11870>]}
 [0m08:29:55.267841 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 09:02:00.950843 | 8c9f675b-3d2a-449d-9bda-63fc6e298359 ==============================
+[0m09:02:00.950843 [info ] [MainThread]: Running with dbt=1.4.4
+[0m09:02:00.962934 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'clean', 'indirect_selection': 'eager'}
+[0m09:02:00.964875 [debug] [MainThread]: Tracking: tracking
+[0m09:02:00.993799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4d930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4d780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4e740>]}
+[0m09:02:01.395171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4d390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4dcf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4cbe0>]}
+[0m09:02:01.397502 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 09:02:13.481443 | 12095221-e192-4f9d-8647-ba289845888e ==============================
+[0m09:02:13.481443 [info ] [MainThread]: Running with dbt=1.4.4
+[0m09:02:13.491498 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m09:02:13.493142 [debug] [MainThread]: Tracking: tracking
+[0m09:02:13.522400 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4d090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4d4b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4d960>]}
+[0m09:02:13.531371 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-ruyac8kt'
+[0m09:02:13.534131 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m09:02:13.810546 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m09:02:13.813855 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m09:02:13.947229 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m09:02:13.975961 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m09:02:13.977772 [debug] [MainThread]: Executing "git --version"
+[0m09:02:14.003554 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m09:02:14.005723 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:14.008456 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m09:02:16.053874 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:16.056531 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m09:02:16.058481 [debug] [MainThread]: Executing "git sparse-checkout set mark"
+[0m09:02:17.172497 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:17.175139 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:17.177777 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m09:02:17.179542 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:17.210334 [debug] [MainThread]: STDOUT: "b'ea50518d93fcc10ac4c63972ce18555373b69416\n'"
+[0m09:02:17.212544 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:17.214611 [debug] [MainThread]:   Checking out revision 0.0.13.
+[0m09:02:17.216158 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.13"
+[0m09:02:17.258886 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:17.261069 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:17.262752 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.13"
+[0m09:02:18.510256 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:18.516729 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.13     -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.10     -> 0.0.10\n * [new tag]         0.0.11     -> 0.0.11\n * [new tag]         0.0.12     -> 0.0.12\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.5      -> 0.0.5\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n * [new tag]         0.0.8      -> 0.0.8\n * [new tag]         0.0.9      -> 0.0.9\n'"
+[0m09:02:18.521608 [debug] [MainThread]: Executing "git tag --list"
+[0m09:02:18.568469 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m09:02:18.574850 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:18.577746 [debug] [MainThread]: Executing "git reset --hard tags/0.0.13"
+[0m09:02:18.641013 [debug] [MainThread]: STDOUT: "b'HEAD is now at ea50518 adding iceberg\n'"
+[0m09:02:18.643294 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:18.644810 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:18.675691 [debug] [MainThread]: STDOUT: "b'ea50518d93fcc10ac4c63972ce18555373b69416\n'"
+[0m09:02:18.677933 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:18.679665 [debug] [MainThread]:   Checked out at ea50518.
+[0m09:02:18.720676 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m09:02:18.722675 [debug] [MainThread]: Executing "git --version"
+[0m09:02:18.746384 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m09:02:18.748579 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:18.750618 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m09:02:20.708341 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:20.711158 [debug] [MainThread]: STDERR: "b"Cloning into 'd69e44c6929a598321ac2d3b3231f032'...\n""
+[0m09:02:20.712941 [debug] [MainThread]: Executing "git sparse-checkout set fina"
+[0m09:02:21.679315 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:21.681803 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:21.683454 [debug] [MainThread]: Pulling new dependency d69e44c6929a598321ac2d3b3231f032.
+[0m09:02:21.685334 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:21.717025 [debug] [MainThread]: STDOUT: "b'5e17550924419a262b095a1082589db129a9ac5c\n'"
+[0m09:02:21.719301 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:21.720876 [debug] [MainThread]:   Checking out revision 0.0.9.
+[0m09:02:21.722514 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.9"
+[0m09:02:21.762290 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:21.764391 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:21.766030 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.9"
+[0m09:02:23.014456 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:23.016992 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.9      -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n * [new tag]         0.0.8      -> 0.0.8\n'"
+[0m09:02:23.018879 [debug] [MainThread]: Executing "git tag --list"
+[0m09:02:23.055138 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m09:02:23.057726 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:23.059189 [debug] [MainThread]: Executing "git reset --hard tags/0.0.9"
+[0m09:02:23.119883 [debug] [MainThread]: STDOUT: "b'HEAD is now at 5e17550 adding iceberg\n'"
+[0m09:02:23.122160 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:23.123819 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:23.158389 [debug] [MainThread]: STDOUT: "b'5e17550924419a262b095a1082589db129a9ac5c\n'"
+[0m09:02:23.160594 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:23.162149 [debug] [MainThread]:   Checked out at 5e17550.
+[0m09:02:23.225300 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m09:02:23.227165 [debug] [MainThread]: Executing "git --version"
+[0m09:02:23.251420 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m09:02:23.253560 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:23.255445 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m09:02:23.282682 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:23.284993 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m09:02:23.286560 [debug] [MainThread]: command return code=128
+[0m09:02:23.291002 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m09:02:23.292832 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:23.326722 [debug] [MainThread]: STDOUT: "b'ea50518d93fcc10ac4c63972ce18555373b69416\n'"
+[0m09:02:23.329074 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:23.330773 [debug] [MainThread]:   Checking out revision 0.0.13.
+[0m09:02:23.332359 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.13"
+[0m09:02:23.372488 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:23.374674 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:23.376305 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.13"
+[0m09:02:24.479867 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:24.482199 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.13     -> FETCH_HEAD\n'"
+[0m09:02:24.483781 [debug] [MainThread]: Executing "git tag --list"
+[0m09:02:24.522101 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m09:02:24.524365 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:24.525963 [debug] [MainThread]: Executing "git reset --hard tags/0.0.13"
+[0m09:02:24.586604 [debug] [MainThread]: STDOUT: "b'HEAD is now at ea50518 adding iceberg\n'"
+[0m09:02:24.588803 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:24.590403 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:24.621886 [debug] [MainThread]: STDOUT: "b'ea50518d93fcc10ac4c63972ce18555373b69416\n'"
+[0m09:02:24.623960 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:24.625504 [debug] [MainThread]: Already at ea50518, nothing to do.
+[0m09:02:24.667361 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m09:02:24.669518 [debug] [MainThread]: Executing "git --version"
+[0m09:02:24.694785 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m09:02:24.696981 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:24.699064 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m09:02:24.724148 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:24.726085 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m09:02:24.727769 [debug] [MainThread]: command return code=128
+[0m09:02:24.730700 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m09:02:24.732230 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:24.763763 [debug] [MainThread]: STDOUT: "b'5e17550924419a262b095a1082589db129a9ac5c\n'"
+[0m09:02:24.766365 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:24.768010 [debug] [MainThread]:   Checking out revision 0.0.9.
+[0m09:02:24.769402 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.9"
+[0m09:02:24.809069 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:24.811149 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:24.812788 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.9"
+[0m09:02:25.860224 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:25.862828 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.9      -> FETCH_HEAD\n'"
+[0m09:02:25.864717 [debug] [MainThread]: Executing "git tag --list"
+[0m09:02:25.902046 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m09:02:25.904209 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:25.905820 [debug] [MainThread]: Executing "git reset --hard tags/0.0.9"
+[0m09:02:25.969557 [debug] [MainThread]: STDOUT: "b'HEAD is now at 5e17550 adding iceberg\n'"
+[0m09:02:25.972063 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:25.973735 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:26.006347 [debug] [MainThread]: STDOUT: "b'5e17550924419a262b095a1082589db129a9ac5c\n'"
+[0m09:02:26.008468 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:26.010106 [debug] [MainThread]: Already at 5e17550, nothing to do.
+[0m09:02:26.048906 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m09:02:27.886196 [info ] [MainThread]:   Installed from version 0.9.6
+[0m09:02:27.888388 [info ] [MainThread]:   Updated version available: 1.0.0
+[0m09:02:27.890506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '12095221-e192-4f9d-8647-ba289845888e', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40059d7d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4c070>]}
+[0m09:02:27.892390 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-marketing.git
+[0m09:02:27.894996 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m09:02:27.896822 [debug] [MainThread]: Executing "git --version"
+[0m09:02:27.921580 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m09:02:27.923889 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:27.925849 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m09:02:27.952803 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:27.955056 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m09:02:27.956605 [debug] [MainThread]: command return code=128
+[0m09:02:27.959473 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m09:02:27.961007 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:27.995124 [debug] [MainThread]: STDOUT: "b'ea50518d93fcc10ac4c63972ce18555373b69416\n'"
+[0m09:02:27.997307 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:27.998862 [debug] [MainThread]:   Checking out revision 0.0.13.
+[0m09:02:28.000300 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.13"
+[0m09:02:28.042098 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:28.044350 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:28.045847 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.13"
+[0m09:02:29.126727 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:29.129198 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.13     -> FETCH_HEAD\n'"
+[0m09:02:29.130981 [debug] [MainThread]: Executing "git tag --list"
+[0m09:02:29.166871 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m09:02:29.169005 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:29.170832 [debug] [MainThread]: Executing "git reset --hard tags/0.0.13"
+[0m09:02:29.231121 [debug] [MainThread]: STDOUT: "b'HEAD is now at ea50518 adding iceberg\n'"
+[0m09:02:29.233308 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:29.234989 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:29.266649 [debug] [MainThread]: STDOUT: "b'ea50518d93fcc10ac4c63972ce18555373b69416\n'"
+[0m09:02:29.268886 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:29.270683 [debug] [MainThread]: Already at ea50518, nothing to do.
+[0m09:02:29.305501 [info ] [MainThread]:   Installed from revision 0.0.13
+[0m09:02:29.307246 [info ] [MainThread]:    and subdirectory mark
+[0m09:02:29.309102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '12095221-e192-4f9d-8647-ba289845888e', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4fc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1ac20>]}
+[0m09:02:29.311181 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-finance.git
+[0m09:02:29.313656 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m09:02:29.315243 [debug] [MainThread]: Executing "git --version"
+[0m09:02:29.340293 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m09:02:29.342490 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:29.344339 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m09:02:29.370735 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:29.372826 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m09:02:29.374285 [debug] [MainThread]: command return code=128
+[0m09:02:29.376969 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m09:02:29.378417 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:29.409948 [debug] [MainThread]: STDOUT: "b'5e17550924419a262b095a1082589db129a9ac5c\n'"
+[0m09:02:29.414215 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:29.415886 [debug] [MainThread]:   Checking out revision 0.0.9.
+[0m09:02:29.417439 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.9"
+[0m09:02:29.460055 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:29.462466 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:29.464208 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.9"
+[0m09:02:30.481533 [debug] [MainThread]: STDOUT: "b''"
+[0m09:02:30.484088 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.9      -> FETCH_HEAD\n'"
+[0m09:02:30.485597 [debug] [MainThread]: Executing "git tag --list"
+[0m09:02:30.522787 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m09:02:30.525071 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:30.526642 [debug] [MainThread]: Executing "git reset --hard tags/0.0.9"
+[0m09:02:30.586355 [debug] [MainThread]: STDOUT: "b'HEAD is now at 5e17550 adding iceberg\n'"
+[0m09:02:30.588559 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:30.590326 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m09:02:30.623267 [debug] [MainThread]: STDOUT: "b'5e17550924419a262b095a1082589db129a9ac5c\n'"
+[0m09:02:30.625449 [debug] [MainThread]: STDERR: "b''"
+[0m09:02:30.627077 [debug] [MainThread]: Already at 5e17550, nothing to do.
+[0m09:02:30.650208 [info ] [MainThread]:   Installed from revision 0.0.9
+[0m09:02:30.652236 [info ] [MainThread]:    and subdirectory fina
+[0m09:02:30.654383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '12095221-e192-4f9d-8647-ba289845888e', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1a6b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1ada0>]}
+[0m09:02:30.658939 [info ] [MainThread]: 
+[0m09:02:30.662645 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m09:02:30.673153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4d090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a18d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a192a0>]}
+[0m09:02:30.675127 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 09:02:42.809975 | dfd83e49-e941-4563-93fe-6fb3c5053058 ==============================
+[0m09:02:42.809975 [info ] [MainThread]: Running with dbt=1.4.4
+[0m09:02:42.821223 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m09:02:42.822858 [debug] [MainThread]: Tracking: tracking
+[0m09:02:42.850056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005bffb20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005bff6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005bffac0>]}
+[0m09:02:43.047068 [debug] [MainThread]: checksum: 170d819e8a7f11e09c497566dd7f61e1355cb9fb514921503937b951cb4a2250, vars: {}, profile: None, target: None, version: 1.4.4
+[0m09:02:43.055757 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:02:43.058003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'dfd83e49-e941-4563-93fe-6fb3c5053058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005bfc760>]}
+[0m09:02:49.097706 [debug] [MainThread]: 1699: static parser successfully parsed example/finance_first_model.sql
+[0m09:02:49.210906 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_first_model.sql
+[0m09:02:49.227786 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_second_model.sql
+[0m09:02:49.642390 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.snow
+[0m09:02:49.674385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dfd83e49-e941-4563-93fe-6fb3c5053058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005e49cf0>]}
+[0m09:02:49.727119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dfd83e49-e941-4563-93fe-6fb3c5053058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005d6c4f0>]}
+[0m09:02:49.729537 [info ] [MainThread]: Found 3 models, 4 tests, 0 snapshots, 0 analyses, 507 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m09:02:49.731414 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dfd83e49-e941-4563-93fe-6fb3c5053058', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005d48730>]}
+[0m09:02:49.737840 [info ] [MainThread]: 
+[0m09:02:49.748829 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m09:02:49.756474 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg_public_marketing'
+[0m09:02:49.767281 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg_public_finance'
+[0m09:02:49.883373 [debug] [ThreadPool]: Using trino connection "list_iceberg_public_finance"
+[0m09:02:49.884509 [debug] [ThreadPool]: Using trino connection "list_iceberg_public_marketing"
+[0m09:02:49.886236 [debug] [ThreadPool]: On list_iceberg_public_finance: select
+      table_catalog as database,
+      table_name as name,
+      table_schema as schema,
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from iceberg.INFORMATION_SCHEMA.tables
+    where table_schema = 'public_finance'
+[0m09:02:49.888388 [debug] [ThreadPool]: On list_iceberg_public_marketing: select
+      table_catalog as database,
+      table_name as name,
+      table_schema as schema,
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from iceberg.INFORMATION_SCHEMA.tables
+    where table_schema = 'public_marketing'
+[0m09:02:49.890053 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:02:49.891619 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:02:59.936110 [debug] [ThreadPool]: Trino adapter: Trino query id: 20230327_090249_00001_d5buy
+[0m09:02:59.938903 [debug] [ThreadPool]: Trino adapter: Trino error: TrinoExternalError(type=EXTERNAL, name=HIVE_METASTORE_ERROR, message="Failed connecting to Hive metastore: [hive-metastore:9083]", query_id=20230327_090249_00001_d5buy)
+[0m09:02:59.942922 [debug] [ThreadPool]: On list_iceberg_public_marketing: ROLLBACK
+[0m09:02:59.947965 [debug] [ThreadPool]: On list_iceberg_public_marketing: Close
+[0m09:03:00.096091 [debug] [ThreadPool]: Trino adapter: Trino query id: 20230327_090249_00000_d5buy
+[0m09:03:00.098555 [debug] [ThreadPool]: Trino adapter: Trino error: TrinoExternalError(type=EXTERNAL, name=HIVE_METASTORE_ERROR, message="Failed connecting to Hive metastore: [hive-metastore:9083]", query_id=20230327_090249_00000_d5buy)
+[0m09:03:00.101062 [debug] [ThreadPool]: On list_iceberg_public_finance: ROLLBACK
+[0m09:03:00.102626 [debug] [ThreadPool]: On list_iceberg_public_finance: Close
+[0m09:03:00.108295 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:03:00.110278 [debug] [MainThread]: Connection 'list_iceberg_public_marketing' was properly closed.
+[0m09:03:00.111911 [debug] [MainThread]: Connection 'list_iceberg_public_finance' was properly closed.
+[0m09:03:00.114203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005e4a470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005d11c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005d12c20>]}
+[0m09:03:00.116455 [debug] [MainThread]: Flushing usage events
+[0m09:03:00.695139 [error] [MainThread]: Encountered an error:
+Database Error
+  TrinoExternalError(type=EXTERNAL, name=HIVE_METASTORE_ERROR, message="Failed connecting to Hive metastore: [hive-metastore:9083]", query_id=20230327_090249_00001_d5buy)
+
+
+============================== 2023-03-27 09:03:18.638935 | af7ede83-b260-4d40-b262-295600e0f9b0 ==============================
+[0m09:03:18.638935 [info ] [MainThread]: Running with dbt=1.4.4
+[0m09:03:18.650185 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m09:03:18.651922 [debug] [MainThread]: Tracking: tracking
+[0m09:03:18.679733 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005c03af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005c03670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005c03a90>]}
+[0m09:03:18.874643 [debug] [MainThread]: checksum: 170d819e8a7f11e09c497566dd7f61e1355cb9fb514921503937b951cb4a2250, vars: {}, profile: None, target: None, version: 1.4.4
+[0m09:03:19.293001 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:03:19.294773 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:03:19.297871 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.snow
+[0m09:03:19.330331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'af7ede83-b260-4d40-b262-295600e0f9b0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005f189d0>]}
+[0m09:03:19.383761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'af7ede83-b260-4d40-b262-295600e0f9b0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005ee1030>]}
+[0m09:03:19.385990 [info ] [MainThread]: Found 3 models, 4 tests, 0 snapshots, 0 analyses, 507 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m09:03:19.387875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af7ede83-b260-4d40-b262-295600e0f9b0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005ee1060>]}
+[0m09:03:19.394167 [info ] [MainThread]: 
+[0m09:03:19.405003 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m09:03:19.414120 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg'
+[0m09:03:19.418710 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg'
+[0m09:03:19.550638 [debug] [ThreadPool]: Using trino connection "list_iceberg"
+[0m09:03:19.553279 [debug] [ThreadPool]: Using trino connection "list_iceberg"
+[0m09:03:19.554801 [debug] [ThreadPool]: On list_iceberg: select distinct schema_name
+    from iceberg.INFORMATION_SCHEMA.schemata
+[0m09:03:19.556796 [debug] [ThreadPool]: On list_iceberg: select distinct schema_name
+    from iceberg.INFORMATION_SCHEMA.schemata
+[0m09:03:19.558678 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:03:19.560423 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:03:29.261381 [debug] [ThreadPool]: Trino adapter: Trino query id: 20230327_090319_00003_d5buy
+[0m09:03:29.264238 [debug] [ThreadPool]: Trino adapter: Trino error: TrinoExternalError(type=EXTERNAL, name=HIVE_METASTORE_ERROR, message="Failed connecting to Hive metastore: [hive-metastore:9083]", query_id=20230327_090319_00003_d5buy)
+[0m09:03:29.266912 [debug] [ThreadPool]: On list_iceberg: Close
+[0m09:03:29.343493 [debug] [ThreadPool]: Trino adapter: Trino query id: 20230327_090319_00002_d5buy
+[0m09:03:29.346485 [debug] [ThreadPool]: Trino adapter: Trino error: TrinoExternalError(type=EXTERNAL, name=HIVE_METASTORE_ERROR, message="Failed connecting to Hive metastore: [hive-metastore:9083]", query_id=20230327_090319_00002_d5buy)
+[0m09:03:29.348491 [debug] [ThreadPool]: On list_iceberg: Close
+[0m09:03:29.354208 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:03:29.356071 [debug] [MainThread]: Connection 'list_iceberg' was properly closed.
+[0m09:03:29.357577 [debug] [MainThread]: Connection 'list_iceberg' was properly closed.
+[0m09:03:29.359773 [info ] [MainThread]: 
+[0m09:03:29.361694 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 9.96 seconds (9.96s).
+[0m09:03:29.364070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005ee0e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005f53130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005f52aa0>]}
+[0m09:03:29.366352 [debug] [MainThread]: Flushing usage events
+[0m09:03:29.988949 [error] [MainThread]: Encountered an error:
+Database Error
+  TrinoExternalError(type=EXTERNAL, name=HIVE_METASTORE_ERROR, message="Failed connecting to Hive metastore: [hive-metastore:9083]", query_id=20230327_090319_00003_d5buy)

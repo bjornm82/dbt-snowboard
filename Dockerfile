@@ -9,6 +9,7 @@ RUN apt-get install unixodbc-dev -y \
 
 RUN pip install dbt-snowflake
 RUN pip install dbt-trino
+RUN pip install dbt-postgres
 
 RUN dbt --version
 
