@@ -26,9 +26,6 @@ jobs:
         name: Install dependencies
         run: make
       -
-        name: Compile dbt
-        run: make dbt-compile
-      -
         name: build docker image
         run: make build
       -
