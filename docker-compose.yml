@@ -10,12 +10,3 @@ services:
       POSTGRES_DB: postgres
     ports:
       - 5432:5432
-
-  trino:
-    image: trinodb/trino:latest
-    volumes:
-      - ./catalog:/etc/trino/catalog
-    ports:
-      - 8080:8080
-    depends_on:
-      - db
