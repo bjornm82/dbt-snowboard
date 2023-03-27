@@ -1,9 +1,9 @@
 
   
+    create table postgresql.public_marketing.aliased_model__dbt_tmp
     
-
-        create or replace transient table BJORN_TEST_UNIT.public_marketing.aliased_model  as
-        (/*
+  as (
+    /*
     Welcome to your first dbt model!
     Did you know that you can also configure models directly within SQL files?
     This will override configurations stated in dbt_project.yml
@@ -27,6 +27,6 @@ from source_data
 */
 
 -- where id is not null
-        );
-      
+  );
+
   

@@ -1,1 +1,7 @@
 2023-03-06 15:43:22.620578 (MainThread): The 'warn' method is deprecated, use 'warning' instead
+2023-03-27 08:18:43.300559 (MainThread): invalid escape sequence '\w'
+2023-03-27 08:18:46.262564 (MainThread): invalid escape sequence '\w'
+2023-03-27 08:20:03.306741 (MainThread): invalid escape sequence '\w'
+2023-03-27 08:20:06.219869 (MainThread): invalid escape sequence '\w'
+2023-03-27 08:20:51.673002 (MainThread): invalid escape sequence '\w'
+2023-03-27 08:20:54.593292 (MainThread): invalid escape sequence '\w'

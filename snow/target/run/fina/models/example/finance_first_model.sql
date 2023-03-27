@@ -1,6 +1,6 @@
 
   create or replace view
-    postgresql.public_marketing.marketing_second_model
+    postgresql.public_finance.finance_first_model
   security definer
   as
     -- Use the `ref` function to select from other models
