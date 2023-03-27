@@ -26,6 +26,11 @@ VOLUME_PROFILE?=~/.dbt/profiles.yml:/root/.dbt/profiles.yml
 VOLUME_PROJECT?=$(PWD)/${PROJECT_NAME}:/usr/app/${PROJECT_NAME}
 VOLUMES?=-v ${VOLUME_PROFILE} -v ${VOLUME_PROJECT}
 
+DEBUG?=false
+ifeq ($(DEBUG), true)
+DEBUG_LOG_ARGS := --debug
+endif
+
 .PHONY: echo_version
 echo_version:
 	echo ${VERSION}
