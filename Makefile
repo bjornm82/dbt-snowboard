@@ -54,7 +54,7 @@ dbt-deps:
 
 .PHONY: dbt-compile
 dbt-compile:
-	docker run --pull=always --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest ${DEBUG_LOG_ARGS} compile
+	docker run --pull=always --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} ${IMAGE}:latest ${DEBUG_LOG_ARGS} compile
 
 .PHONY: dbt-clean
 dbt-clean:
