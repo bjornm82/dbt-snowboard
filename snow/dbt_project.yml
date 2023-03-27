@@ -18,4 +18,4 @@ clean-targets:
 
 models:
   snow:
-    +database: "BJORN_TEST_UNIT"
+    +database: "postgresql"
