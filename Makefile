@@ -14,7 +14,7 @@ GIT_VERSION ?= $(shell git rev-parse --abbrev-ref HEAD)
 # Version definitions, project is our version, dbt is version of dbt to use
 PROJECT_NAME?=snow
 DBT_VERSION?=1.4.4
-PROJECT_VERSION?=0.0.1
+PROJECT_VERSION?=0.0.2
 VERSION=${DBT_VERSION}_${PROJECT_VERSION}
 
 HUB?=bjornmooijekind
