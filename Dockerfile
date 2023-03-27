@@ -15,7 +15,7 @@ RUN dbt --version
 
 ARG PROJECT_NAME
 
-COPY ${PROJECT_NAME}/snow/target/manifest.json /usr/app/${PROJECT_NAME}/manifest.json
+COPY ${PROJECT_NAME}/target/manifest.json /usr/app/${PROJECT_NAME}/manifest.json
 COPY ${PROJECT_NAME}/dbt_project.yml /usr/app/${PROJECT_NAME}/dbt_project.yml
 COPY ${PROJECT_NAME}/packages.yml /usr/app/${PROJECT_NAME}/packages.yml
 COPY ${PROJECT_NAME}/dbt_packages /usr/app/${PROJECT_NAME}/dbt_packages
