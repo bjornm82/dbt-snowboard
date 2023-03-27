@@ -5217,3 +5217,210 @@ where id = 1
 [0m08:20:59.012110 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=2 SKIP=0 TOTAL=3
 [0m08:20:59.014053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b3a440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x403ee0a770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x403ee09f60>]}
 [0m08:20:59.015899 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 08:29:37.857328 | bf993468-e45d-4f86-81ca-313ad2c382f9 ==============================
+[0m08:29:37.857328 [info ] [MainThread]: Running with dbt=1.4.4
+[0m08:29:37.869949 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m08:29:37.872190 [debug] [MainThread]: Tracking: tracking
+[0m08:29:37.902162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a49930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a49780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4a740>]}
+[0m08:29:37.909133 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-12mo6z4g'
+[0m08:29:37.912057 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m08:29:38.206675 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m08:29:38.210540 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m08:29:38.385741 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m08:29:38.415406 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m08:29:38.417770 [debug] [MainThread]: Executing "git --version"
+[0m08:29:38.445292 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m08:29:38.448196 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:38.452331 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m08:29:40.428506 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:40.431120 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m08:29:40.433010 [debug] [MainThread]: Executing "git sparse-checkout set mark"
+[0m08:29:41.411777 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:41.414585 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:41.417407 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m08:29:41.419250 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:41.452280 [debug] [MainThread]: STDOUT: "b'4004cff245c118dd7a7aa73151dbef848a2315e1\n'"
+[0m08:29:41.454805 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:41.456555 [debug] [MainThread]:   Checking out revision 0.0.12.
+[0m08:29:41.458251 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.12"
+[0m08:29:41.500479 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:41.502664 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:41.504339 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.12"
+[0m08:29:42.704041 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:42.706878 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.12     -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.10     -> 0.0.10\n * [new tag]         0.0.11     -> 0.0.11\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.5      -> 0.0.5\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n * [new tag]         0.0.8      -> 0.0.8\n * [new tag]         0.0.9      -> 0.0.9\n'"
+[0m08:29:42.709270 [debug] [MainThread]: Executing "git tag --list"
+[0m08:29:42.749065 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m08:29:42.751732 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:42.753205 [debug] [MainThread]: Executing "git reset --hard tags/0.0.12"
+[0m08:29:42.818378 [debug] [MainThread]: STDOUT: "b'HEAD is now at 4004cff database name change\n'"
+[0m08:29:42.820923 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:42.822914 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:42.855007 [debug] [MainThread]: STDOUT: "b'4004cff245c118dd7a7aa73151dbef848a2315e1\n'"
+[0m08:29:42.857647 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:42.859590 [debug] [MainThread]:   Checked out at 4004cff.
+[0m08:29:42.908534 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m08:29:42.911111 [debug] [MainThread]: Executing "git --version"
+[0m08:29:42.936908 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m08:29:42.939369 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:42.941619 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m08:29:44.929109 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:44.931547 [debug] [MainThread]: STDERR: "b"Cloning into 'd69e44c6929a598321ac2d3b3231f032'...\n""
+[0m08:29:44.933531 [debug] [MainThread]: Executing "git sparse-checkout set fina"
+[0m08:29:45.907072 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:45.909315 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:45.910881 [debug] [MainThread]: Pulling new dependency d69e44c6929a598321ac2d3b3231f032.
+[0m08:29:45.912481 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:45.944531 [debug] [MainThread]: STDOUT: "b'decf486bf9cf75df4d4ffa923452d1844fae649f\n'"
+[0m08:29:45.946606 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:45.948118 [debug] [MainThread]:   Checking out revision 0.0.8.
+[0m08:29:45.949490 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.8"
+[0m08:29:45.988844 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:45.990821 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:45.992264 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.8"
+[0m08:29:47.238027 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:47.240512 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.8      -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n'"
+[0m08:29:47.242362 [debug] [MainThread]: Executing "git tag --list"
+[0m08:29:47.279162 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n'"
+[0m08:29:47.281308 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:47.282753 [debug] [MainThread]: Executing "git reset --hard tags/0.0.8"
+[0m08:29:47.340863 [debug] [MainThread]: STDOUT: "b'HEAD is now at decf486 changing database name\n'"
+[0m08:29:47.342926 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:47.344453 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:47.375006 [debug] [MainThread]: STDOUT: "b'decf486bf9cf75df4d4ffa923452d1844fae649f\n'"
+[0m08:29:47.377036 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:47.378621 [debug] [MainThread]:   Checked out at decf486.
+[0m08:29:47.437199 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m08:29:47.438967 [debug] [MainThread]: Executing "git --version"
+[0m08:29:47.462609 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m08:29:47.464571 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:47.466353 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m08:29:47.492495 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:47.494567 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m08:29:47.496056 [debug] [MainThread]: command return code=128
+[0m08:29:47.499879 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m08:29:47.501420 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:47.531504 [debug] [MainThread]: STDOUT: "b'4004cff245c118dd7a7aa73151dbef848a2315e1\n'"
+[0m08:29:47.533656 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:47.535094 [debug] [MainThread]:   Checking out revision 0.0.12.
+[0m08:29:47.536470 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.12"
+[0m08:29:47.575472 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:47.577456 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:47.578806 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.12"
+[0m08:29:48.646990 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:48.649277 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.12     -> FETCH_HEAD\n'"
+[0m08:29:48.650798 [debug] [MainThread]: Executing "git tag --list"
+[0m08:29:48.685372 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m08:29:48.687352 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:48.688780 [debug] [MainThread]: Executing "git reset --hard tags/0.0.12"
+[0m08:29:48.745474 [debug] [MainThread]: STDOUT: "b'HEAD is now at 4004cff database name change\n'"
+[0m08:29:48.747500 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:48.749266 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:48.779592 [debug] [MainThread]: STDOUT: "b'4004cff245c118dd7a7aa73151dbef848a2315e1\n'"
+[0m08:29:48.781616 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:48.783300 [debug] [MainThread]: Already at 4004cff, nothing to do.
+[0m08:29:48.820110 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m08:29:48.821897 [debug] [MainThread]: Executing "git --version"
+[0m08:29:48.845233 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m08:29:48.847349 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:48.849067 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m08:29:48.874134 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:48.876218 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m08:29:48.877592 [debug] [MainThread]: command return code=128
+[0m08:29:48.880321 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m08:29:48.881762 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:48.911174 [debug] [MainThread]: STDOUT: "b'decf486bf9cf75df4d4ffa923452d1844fae649f\n'"
+[0m08:29:48.913078 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:48.914461 [debug] [MainThread]:   Checking out revision 0.0.8.
+[0m08:29:48.915854 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.8"
+[0m08:29:48.954208 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:48.955994 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:48.957430 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.8"
+[0m08:29:50.288718 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:50.291091 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.8      -> FETCH_HEAD\n'"
+[0m08:29:50.292736 [debug] [MainThread]: Executing "git tag --list"
+[0m08:29:50.328360 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n'"
+[0m08:29:50.330779 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:50.332269 [debug] [MainThread]: Executing "git reset --hard tags/0.0.8"
+[0m08:29:50.392074 [debug] [MainThread]: STDOUT: "b'HEAD is now at decf486 changing database name\n'"
+[0m08:29:50.394449 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:50.396083 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:50.426659 [debug] [MainThread]: STDOUT: "b'decf486bf9cf75df4d4ffa923452d1844fae649f\n'"
+[0m08:29:50.428604 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:50.430033 [debug] [MainThread]: Already at decf486, nothing to do.
+[0m08:29:50.466896 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m08:29:52.417485 [info ] [MainThread]:   Installed from version 0.9.6
+[0m08:29:52.419723 [info ] [MainThread]:   Updated version available: 1.0.0
+[0m08:29:52.421786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'bf993468-e45d-4f86-81ca-313ad2c382f9', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a48430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a48100>]}
+[0m08:29:52.423787 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-marketing.git
+[0m08:29:52.434013 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m08:29:52.435764 [debug] [MainThread]: Executing "git --version"
+[0m08:29:52.464080 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m08:29:52.466544 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:52.469102 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m08:29:52.495524 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:52.497841 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m08:29:52.499329 [debug] [MainThread]: command return code=128
+[0m08:29:52.502156 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m08:29:52.503581 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:52.535611 [debug] [MainThread]: STDOUT: "b'4004cff245c118dd7a7aa73151dbef848a2315e1\n'"
+[0m08:29:52.537713 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:52.539277 [debug] [MainThread]:   Checking out revision 0.0.12.
+[0m08:29:52.540736 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.12"
+[0m08:29:52.582266 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:52.584512 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:52.586063 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.12"
+[0m08:29:53.663906 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:53.666204 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.12     -> FETCH_HEAD\n'"
+[0m08:29:53.667862 [debug] [MainThread]: Executing "git tag --list"
+[0m08:29:53.705927 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m08:29:53.708016 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:53.709574 [debug] [MainThread]: Executing "git reset --hard tags/0.0.12"
+[0m08:29:53.766571 [debug] [MainThread]: STDOUT: "b'HEAD is now at 4004cff database name change\n'"
+[0m08:29:53.768647 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:53.770086 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:53.803354 [debug] [MainThread]: STDOUT: "b'4004cff245c118dd7a7aa73151dbef848a2315e1\n'"
+[0m08:29:53.805648 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:53.807363 [debug] [MainThread]: Already at 4004cff, nothing to do.
+[0m08:29:53.836596 [info ] [MainThread]:   Installed from revision 0.0.12
+[0m08:29:53.838437 [info ] [MainThread]:    and subdirectory mark
+[0m08:29:53.840296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'bf993468-e45d-4f86-81ca-313ad2c382f9', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a49c60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a11750>]}
+[0m08:29:53.842238 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-finance.git
+[0m08:29:53.850677 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m08:29:53.852321 [debug] [MainThread]: Executing "git --version"
+[0m08:29:53.877984 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m08:29:53.880437 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:53.882308 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m08:29:53.907971 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:53.910060 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m08:29:53.911539 [debug] [MainThread]: command return code=128
+[0m08:29:53.914290 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m08:29:53.915681 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:53.946034 [debug] [MainThread]: STDOUT: "b'decf486bf9cf75df4d4ffa923452d1844fae649f\n'"
+[0m08:29:53.949211 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:53.950690 [debug] [MainThread]:   Checking out revision 0.0.8.
+[0m08:29:53.955712 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.8"
+[0m08:29:53.994567 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:53.996559 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:53.997934 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.8"
+[0m08:29:55.087741 [debug] [MainThread]: STDOUT: "b''"
+[0m08:29:55.090102 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.8      -> FETCH_HEAD\n'"
+[0m08:29:55.091747 [debug] [MainThread]: Executing "git tag --list"
+[0m08:29:55.130195 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n'"
+[0m08:29:55.132492 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:55.133999 [debug] [MainThread]: Executing "git reset --hard tags/0.0.8"
+[0m08:29:55.192056 [debug] [MainThread]: STDOUT: "b'HEAD is now at decf486 changing database name\n'"
+[0m08:29:55.194338 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:55.195883 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m08:29:55.226360 [debug] [MainThread]: STDOUT: "b'decf486bf9cf75df4d4ffa923452d1844fae649f\n'"
+[0m08:29:55.228278 [debug] [MainThread]: STDERR: "b''"
+[0m08:29:55.229700 [debug] [MainThread]: Already at decf486, nothing to do.
+[0m08:29:55.251036 [info ] [MainThread]:   Installed from revision 0.0.8
+[0m08:29:55.252660 [info ] [MainThread]:    and subdirectory fina
+[0m08:29:55.254550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'bf993468-e45d-4f86-81ca-313ad2c382f9', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a12b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a125f0>]}
+[0m08:29:55.256178 [info ] [MainThread]: 
+[0m08:29:55.257688 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m08:29:55.265918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4a740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a11ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a11870>]}
+[0m08:29:55.267841 [debug] [MainThread]: Flushing usage events
