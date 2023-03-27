@@ -8255,3 +8255,284 @@ drop view if exists "postgres"."public_marketing"."second_model__dbt_backup" cas
 Update your versions in packages.yml, then run dbt deps
 [0m11:06:27.647507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1a5c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a19810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a197b0>]}
 [0m11:06:27.649408 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 13:11:29.619658 | 9334c5d6-8c35-48b5-b289-1c58befb710a ==============================
+[0m13:11:29.619658 [info ] [MainThread]: Running with dbt=1.4.5
+[0m13:11:29.631427 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'compile': True, 'which': 'generate', 'rpc_method': 'docs.generate', 'indirect_selection': 'eager'}
+[0m13:11:29.633180 [debug] [MainThread]: Tracking: tracking
+[0m13:11:29.662956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b543a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b54820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b54400>]}
+[0m13:11:29.869819 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m13:11:29.878808 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:11:29.881121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9334c5d6-8c35-48b5-b289-1c58befb710a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b55a80>]}
+[0m13:11:35.132247 [debug] [MainThread]: 1699: static parser successfully parsed example/finance_first_model.sql
+[0m13:11:35.242435 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_first_model.sql
+[0m13:11:35.264273 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_second_model.sql
+[0m13:11:35.606159 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.snow
+[0m13:11:35.633643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9334c5d6-8c35-48b5-b289-1c58befb710a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40073e6260>]}
+[0m13:11:35.723703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9334c5d6-8c35-48b5-b289-1c58befb710a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400417cdf0>]}
+[0m13:11:35.725856 [info ] [MainThread]: Found 3 models, 4 tests, 0 snapshots, 0 analyses, 488 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m13:11:35.727752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9334c5d6-8c35-48b5-b289-1c58befb710a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400522c640>]}
+[0m13:11:35.734495 [info ] [MainThread]: 
+[0m13:11:35.744903 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:11:35.752919 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_finance'
+[0m13:11:35.762856 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marketing'
+[0m13:11:35.858107 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m13:11:35.859539 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m13:11:35.860963 [debug] [ThreadPool]: On list_postgres_public_finance: BEGIN
+[0m13:11:35.862677 [debug] [ThreadPool]: On list_postgres_public_marketing: BEGIN
+[0m13:11:35.864328 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:11:35.865995 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:11:35.914661 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m13:11:35.915623 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m13:11:35.917300 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m13:11:35.919201 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m13:11:35.920806 [debug] [ThreadPool]: On list_postgres_public_marketing: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_marketing"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marketing'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marketing'
+  
+[0m13:11:35.922368 [debug] [ThreadPool]: On list_postgres_public_finance: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_finance"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_finance'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_finance'
+  
+[0m13:11:35.927738 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m13:11:35.928724 [debug] [ThreadPool]: SQL status: SELECT 1 in 0 seconds
+[0m13:11:35.935586 [debug] [ThreadPool]: On list_postgres_public_marketing: ROLLBACK
+[0m13:11:35.940729 [debug] [ThreadPool]: On list_postgres_public_finance: ROLLBACK
+[0m13:11:35.943488 [debug] [ThreadPool]: On list_postgres_public_marketing: Close
+[0m13:11:35.945234 [debug] [ThreadPool]: On list_postgres_public_finance: Close
+[0m13:11:35.979909 [debug] [MainThread]: Using postgres connection "master"
+[0m13:11:35.982299 [debug] [MainThread]: On master: BEGIN
+[0m13:11:35.984645 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:11:36.002466 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m13:11:36.005702 [debug] [MainThread]: Using postgres connection "master"
+[0m13:11:36.008922 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m13:11:36.018528 [debug] [MainThread]: SQL status: SELECT 2 in 0 seconds
+[0m13:11:36.028640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9334c5d6-8c35-48b5-b289-1c58befb710a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400730c940>]}
+[0m13:11:36.031441 [debug] [MainThread]: On master: ROLLBACK
+[0m13:11:36.034611 [debug] [MainThread]: On master: Close
+[0m13:11:36.038707 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m13:11:36.041764 [info ] [MainThread]: 
+[0m13:11:36.139690 [debug] [Thread-1 (]: Began running node model.mark.marketing_first_model
+[0m13:11:36.143783 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.mark.marketing_first_model'
+[0m13:11:36.146092 [debug] [Thread-1 (]: Began compiling node model.mark.marketing_first_model
+[0m13:11:36.162148 [debug] [Thread-1 (]: Writing injected SQL for node "model.mark.marketing_first_model"
+[0m13:11:36.176103 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (compile): 2023-03-27 13:11:36.148089 => 2023-03-27 13:11:36.175540
+[0m13:11:36.178676 [debug] [Thread-1 (]: Began executing node model.mark.marketing_first_model
+[0m13:11:36.180504 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (execute): 2023-03-27 13:11:36.180187 => 2023-03-27 13:11:36.180254
+[0m13:11:36.191424 [debug] [Thread-1 (]: Finished running node model.mark.marketing_first_model
+[0m13:11:36.201045 [debug] [Thread-3 (]: Began running node model.fina.finance_first_model
+[0m13:11:36.202719 [debug] [Thread-4 (]: Began running node model.mark.marketing_second_model
+[0m13:11:36.204148 [debug] [Thread-5 (]: Began running node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:11:36.207875 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.fina.finance_first_model'
+[0m13:11:36.212736 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.mark.marketing_second_model'
+[0m13:11:36.221091 [debug] [Thread-5 (]: Acquiring new postgres connection 'test.mark.unique_marketing_first_model_id.9d1dc805ac'
+[0m13:11:36.223520 [debug] [Thread-3 (]: Began compiling node model.fina.finance_first_model
+[0m13:11:36.225118 [debug] [Thread-4 (]: Began compiling node model.mark.marketing_second_model
+[0m13:11:36.226767 [debug] [Thread-5 (]: Began compiling node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:11:36.241502 [debug] [Thread-3 (]: Writing injected SQL for node "model.fina.finance_first_model"
+[0m13:11:36.257676 [debug] [Thread-4 (]: Writing injected SQL for node "model.mark.marketing_second_model"
+[0m13:11:36.316270 [debug] [Thread-5 (]: Writing injected SQL for node "test.mark.unique_marketing_first_model_id.9d1dc805ac"
+[0m13:11:36.317965 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (compile): 2023-03-27 13:11:36.242920 => 2023-03-27 13:11:36.317660
+[0m13:11:36.320637 [debug] [Thread-4 (]: Began executing node model.mark.marketing_second_model
+[0m13:11:36.324940 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (execute): 2023-03-27 13:11:36.324545 => 2023-03-27 13:11:36.324608
+[0m13:11:36.326825 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (compile): 2023-03-27 13:11:36.228461 => 2023-03-27 13:11:36.326457
+[0m13:11:36.331424 [debug] [Thread-4 (]: Finished running node model.mark.marketing_second_model
+[0m13:11:36.333001 [debug] [Thread-5 (]: Timing info for test.mark.unique_marketing_first_model_id.9d1dc805ac (compile): 2023-03-27 13:11:36.259192 => 2023-03-27 13:11:36.332620
+[0m13:11:36.334082 [debug] [Thread-3 (]: Began executing node model.fina.finance_first_model
+[0m13:11:36.337464 [debug] [Thread-7 (]: Began running node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:11:36.338779 [debug] [Thread-8 (]: Began running node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:11:36.339731 [debug] [Thread-5 (]: Began executing node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:11:36.341451 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (execute): 2023-03-27 13:11:36.341190 => 2023-03-27 13:11:36.341226
+[0m13:11:36.344582 [debug] [Thread-7 (]: Acquiring new postgres connection 'test.mark.not_null_marketing_second_model_ID.4f2242678d'
+[0m13:11:36.347878 [debug] [Thread-8 (]: Acquiring new postgres connection 'test.mark.unique_marketing_second_model_ID.180ff0615f'
+[0m13:11:36.349557 [debug] [Thread-5 (]: Timing info for test.mark.unique_marketing_first_model_id.9d1dc805ac (execute): 2023-03-27 13:11:36.349294 => 2023-03-27 13:11:36.349331
+[0m13:11:36.353085 [debug] [Thread-3 (]: Finished running node model.fina.finance_first_model
+[0m13:11:36.355007 [debug] [Thread-7 (]: Began compiling node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:11:36.356859 [debug] [Thread-8 (]: Began compiling node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:11:36.360472 [debug] [Thread-5 (]: Finished running node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:11:36.363464 [debug] [Thread-1 (]: Began running node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:11:36.428987 [debug] [Thread-8 (]: Writing injected SQL for node "test.mark.unique_marketing_second_model_ID.180ff0615f"
+[0m13:11:36.434727 [debug] [Thread-7 (]: Writing injected SQL for node "test.mark.not_null_marketing_second_model_ID.4f2242678d"
+[0m13:11:36.437739 [debug] [Thread-1 (]: Acquiring new postgres connection 'test.fina.unique_finance_first_model_id.7cafc8c11d'
+[0m13:11:36.442072 [debug] [Thread-1 (]: Began compiling node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:11:36.443978 [debug] [Thread-7 (]: Timing info for test.mark.not_null_marketing_second_model_ID.4f2242678d (compile): 2023-03-27 13:11:36.364625 => 2023-03-27 13:11:36.443590
+[0m13:11:36.444715 [debug] [Thread-8 (]: Timing info for test.mark.unique_marketing_second_model_ID.180ff0615f (compile): 2023-03-27 13:11:36.388984 => 2023-03-27 13:11:36.444532
+[0m13:11:36.464170 [debug] [Thread-1 (]: Writing injected SQL for node "test.fina.unique_finance_first_model_id.7cafc8c11d"
+[0m13:11:36.465095 [debug] [Thread-7 (]: Began executing node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:11:36.467036 [debug] [Thread-8 (]: Began executing node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:11:36.470213 [debug] [Thread-7 (]: Timing info for test.mark.not_null_marketing_second_model_ID.4f2242678d (execute): 2023-03-27 13:11:36.469770 => 2023-03-27 13:11:36.469863
+[0m13:11:36.471975 [debug] [Thread-8 (]: Timing info for test.mark.unique_marketing_second_model_ID.180ff0615f (execute): 2023-03-27 13:11:36.471689 => 2023-03-27 13:11:36.471732
+[0m13:11:36.473265 [debug] [Thread-1 (]: Timing info for test.fina.unique_finance_first_model_id.7cafc8c11d (compile): 2023-03-27 13:11:36.445186 => 2023-03-27 13:11:36.473024
+[0m13:11:36.475823 [debug] [Thread-7 (]: Finished running node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:11:36.479167 [debug] [Thread-8 (]: Finished running node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:11:36.480650 [debug] [Thread-1 (]: Began executing node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:11:36.484237 [debug] [Thread-1 (]: Timing info for test.fina.unique_finance_first_model_id.7cafc8c11d (execute): 2023-03-27 13:11:36.483959 => 2023-03-27 13:11:36.484001
+[0m13:11:36.487480 [debug] [Thread-1 (]: Finished running node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:11:36.492490 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:11:36.494066 [debug] [MainThread]: Connection 'list_postgres_public_finance' was properly closed.
+[0m13:11:36.495457 [debug] [MainThread]: Connection 'test.fina.unique_finance_first_model_id.7cafc8c11d' was properly closed.
+[0m13:11:36.496823 [debug] [MainThread]: Connection 'model.fina.finance_first_model' was properly closed.
+[0m13:11:36.498110 [debug] [MainThread]: Connection 'model.mark.marketing_second_model' was properly closed.
+[0m13:11:36.499323 [debug] [MainThread]: Connection 'test.mark.unique_marketing_first_model_id.9d1dc805ac' was properly closed.
+[0m13:11:36.500567 [debug] [MainThread]: Connection 'test.mark.not_null_marketing_second_model_ID.4f2242678d' was properly closed.
+[0m13:11:36.501907 [debug] [MainThread]: Connection 'test.mark.unique_marketing_second_model_ID.180ff0615f' was properly closed.
+[0m13:11:36.504803 [debug] [MainThread]: Command end result
+[0m13:11:36.546025 [info ] [MainThread]: Done.
+[0m13:11:36.566768 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m13:11:36.568475 [info ] [MainThread]: Building catalog
+[0m13:11:36.576007 [debug] [ThreadPool]: Acquiring new postgres connection 'postgres.information_schema'
+[0m13:11:36.610907 [debug] [ThreadPool]: Using postgres connection "postgres.information_schema"
+[0m13:11:36.612803 [debug] [ThreadPool]: On postgres.information_schema: BEGIN
+[0m13:11:36.614274 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:11:36.627152 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m13:11:36.629065 [debug] [ThreadPool]: Using postgres connection "postgres.information_schema"
+[0m13:11:36.630601 [debug] [ThreadPool]: On postgres.information_schema: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "postgres.information_schema"} */
+
+    
+    
+
+    select
+        'postgres' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+
+    where (upper(sch.nspname) = upper('public_marketing') or upper(sch.nspname) = upper('public_finance'))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table, [m]aterialized view
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m13:11:36.636161 [debug] [ThreadPool]: SQL status: SELECT 3 in 0 seconds
+[0m13:11:36.656180 [debug] [ThreadPool]: On postgres.information_schema: ROLLBACK
+[0m13:11:36.658751 [debug] [ThreadPool]: On postgres.information_schema: Close
+[0m13:11:36.704152 [info ] [MainThread]: Catalog written to /usr/app/snow/target/catalog.json
+[0m13:11:36.706519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b543a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40041f55d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4caf0>]}
+[0m13:11:36.708263 [debug] [MainThread]: Flushing usage events
+[0m13:11:37.454912 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m13:11:37.459092 [debug] [MainThread]: Connection 'postgres.information_schema' was properly closed.
+
+
+============================== 2023-03-27 13:11:48.525132 | 3f45f778-2fc6-4fb4-af5d-971bd4cf47bd ==============================
+[0m13:11:48.525132 [info ] [MainThread]: Running with dbt=1.4.5
+[0m13:11:48.536547 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'port': 8082, 'open_browser': True, 'which': 'serve', 'indirect_selection': 'eager'}
+[0m13:11:48.538210 [debug] [MainThread]: Tracking: tracking
+[0m13:11:48.565614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b54490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b54910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b544f0>]}
+[0m13:11:48.585919 [info ] [MainThread]: Serving docs at 0.0.0.0:8082
+[0m13:11:48.588256 [info ] [MainThread]: To access from your browser, navigate to:  http://localhost:8082
+[0m13:11:48.590009 [info ] [MainThread]: 
+[0m13:11:48.591764 [info ] [MainThread]: 
+[0m13:11:48.593830 [info ] [MainThread]: Press Ctrl+C to exit.
+[0m13:13:58.132953 [debug] [MainThread]: Flushing usage events
+[0m13:13:58.874624 [info ] [MainThread]: ctrl-c
