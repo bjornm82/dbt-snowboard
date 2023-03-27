@@ -8,6 +8,7 @@ RUN apt-get install unixodbc-dev -y \
     gcc libsasl2-dev libsasl2-modules -y
 
 RUN pip install dbt-snowflake
+RUN pip install dbt-trino
 
 RUN dbt --version
 

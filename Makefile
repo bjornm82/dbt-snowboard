@@ -45,24 +45,24 @@ push:
 
 .PHONY: dbt-deps
 dbt-deps:
-	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} deps
+	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest ${DEBUG_LOG_ARGS} deps
 
 .PHONY: dbt-compile
 dbt-compile:
-	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} compile
+	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest ${DEBUG_LOG_ARGS} compile
 
 .PHONY: dbt-clean
 dbt-clean:
-	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} clean
+	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest ${DEBUG_LOG_ARGS} clean
 
 .PHONY: dbt-run
 dbt-run:
-	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} ${DEBUG_LOG_ARGS} run
+	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest ${DEBUG_LOG_ARGS} run
 
 .PHONY: dbt-generate
 dbt-generate:
-	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} docs generate
+	docker run --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest docs generate
 
 .PHONY: dbt-serve
 dbt-serve:
-	docker run -p 8082:8082 --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:${VERSION} docs serve --port 8082
+	docker run -p 8082:8082 --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest docs serve --port 8082
