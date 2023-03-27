@@ -71,3 +71,7 @@ dbt-generate:
 .PHONY: dbt-serve
 dbt-serve:
 	docker run --pull=always -p 8082:8082 --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest docs serve --port 8082
+
+.PHONY: dbt-run-state
+dbt-run-state:
+	docker run --pull=always --rm ${VOLUMES} -e ENV=${GIT_VERSION} -e PROJECT_NAME=${PROJECT_NAME} -it ${IMAGE}:latest ${DEBUG_LOG_ARGS} run --select state:modified --state=./

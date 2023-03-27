@@ -9172,3 +9172,1500 @@ with relation as (
 [0m13:50:14.037196 [info ] [MainThread]: Done.
 [0m13:50:14.039601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075332b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4007533a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b57d00>]}
 [0m13:50:14.041182 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 13:56:05.835193 | 8d05a391-7547-4485-b8cc-24e2d22ef252 ==============================
+[0m13:56:05.835193 [info ] [MainThread]: Running with dbt=1.4.5
+[0m13:56:05.846598 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m13:56:05.848208 [debug] [MainThread]: Tracking: tracking
+[0m13:56:05.876173 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b54460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b548e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b544c0>]}
+[0m13:56:06.070147 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m13:56:06.443572 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:56:06.445351 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:56:06.448510 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.snow
+[0m13:56:06.480090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8d05a391-7547-4485-b8cc-24e2d22ef252', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074940d0>]}
+[0m13:56:06.529729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8d05a391-7547-4485-b8cc-24e2d22ef252', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074603d0>]}
+[0m13:56:06.531921 [info ] [MainThread]: Found 3 models, 4 tests, 0 snapshots, 0 analyses, 488 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m13:56:06.533553 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8d05a391-7547-4485-b8cc-24e2d22ef252', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074601f0>]}
+[0m13:56:06.539947 [info ] [MainThread]: 
+[0m13:56:06.550146 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:56:06.558514 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_finance'
+[0m13:56:06.563082 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marketing'
+[0m13:56:06.670985 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m13:56:06.665185 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m13:56:06.673203 [debug] [ThreadPool]: On list_postgres_public_marketing: BEGIN
+[0m13:56:06.674878 [debug] [ThreadPool]: On list_postgres_public_finance: BEGIN
+[0m13:56:06.676507 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:56:06.678100 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:56:06.726816 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m13:56:06.727829 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m13:56:06.729422 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m13:56:06.731012 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m13:56:06.732512 [debug] [ThreadPool]: On list_postgres_public_finance: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_finance"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_finance'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_finance'
+  
+[0m13:56:06.734087 [debug] [ThreadPool]: On list_postgres_public_marketing: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_marketing"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marketing'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marketing'
+  
+[0m13:56:06.739533 [debug] [ThreadPool]: SQL status: SELECT 1 in 0 seconds
+[0m13:56:06.740424 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m13:56:06.747247 [debug] [ThreadPool]: On list_postgres_public_finance: ROLLBACK
+[0m13:56:06.752737 [debug] [ThreadPool]: On list_postgres_public_marketing: ROLLBACK
+[0m13:56:06.755515 [debug] [ThreadPool]: On list_postgres_public_finance: Close
+[0m13:56:06.757429 [debug] [ThreadPool]: On list_postgres_public_marketing: Close
+[0m13:56:06.790994 [debug] [MainThread]: Using postgres connection "master"
+[0m13:56:06.793041 [debug] [MainThread]: On master: BEGIN
+[0m13:56:06.794544 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:56:06.807668 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m13:56:06.809610 [debug] [MainThread]: Using postgres connection "master"
+[0m13:56:06.811349 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m13:56:06.819228 [debug] [MainThread]: SQL status: SELECT 2 in 0 seconds
+[0m13:56:06.826196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8d05a391-7547-4485-b8cc-24e2d22ef252', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400743f850>]}
+[0m13:56:06.828602 [debug] [MainThread]: On master: ROLLBACK
+[0m13:56:06.831163 [debug] [MainThread]: On master: Close
+[0m13:56:06.834333 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m13:56:06.836436 [info ] [MainThread]: 
+[0m13:56:06.924435 [debug] [Thread-1 (]: Began running node model.mark.marketing_first_model
+[0m13:56:06.928229 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.mark.marketing_first_model'
+[0m13:56:06.930216 [debug] [Thread-1 (]: Began compiling node model.mark.marketing_first_model
+[0m13:56:06.944068 [debug] [Thread-1 (]: Writing injected SQL for node "model.mark.marketing_first_model"
+[0m13:56:06.948829 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (compile): 2023-03-27 13:56:06.931579 => 2023-03-27 13:56:06.948464
+[0m13:56:06.950619 [debug] [Thread-1 (]: Began executing node model.mark.marketing_first_model
+[0m13:56:06.952320 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (execute): 2023-03-27 13:56:06.952005 => 2023-03-27 13:56:06.952069
+[0m13:56:06.962532 [debug] [Thread-1 (]: Finished running node model.mark.marketing_first_model
+[0m13:56:06.968396 [debug] [Thread-3 (]: Began running node model.fina.finance_first_model
+[0m13:56:06.969557 [debug] [Thread-4 (]: Began running node model.mark.marketing_second_model
+[0m13:56:06.970609 [debug] [Thread-5 (]: Began running node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:56:06.973388 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.fina.finance_first_model'
+[0m13:56:06.976326 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.mark.marketing_second_model'
+[0m13:56:06.979130 [debug] [Thread-5 (]: Acquiring new postgres connection 'test.mark.unique_marketing_first_model_id.9d1dc805ac'
+[0m13:56:06.980779 [debug] [Thread-3 (]: Began compiling node model.fina.finance_first_model
+[0m13:56:06.982304 [debug] [Thread-4 (]: Began compiling node model.mark.marketing_second_model
+[0m13:56:06.983866 [debug] [Thread-5 (]: Began compiling node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:56:06.997734 [debug] [Thread-3 (]: Writing injected SQL for node "model.fina.finance_first_model"
+[0m13:56:07.013650 [debug] [Thread-4 (]: Writing injected SQL for node "model.mark.marketing_second_model"
+[0m13:56:07.067885 [debug] [Thread-5 (]: Writing injected SQL for node "test.mark.unique_marketing_first_model_id.9d1dc805ac"
+[0m13:56:07.068955 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (compile): 2023-03-27 13:56:06.985111 => 2023-03-27 13:56:07.068686
+[0m13:56:07.072478 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (compile): 2023-03-27 13:56:06.998339 => 2023-03-27 13:56:07.072167
+[0m13:56:07.073439 [debug] [Thread-3 (]: Began executing node model.fina.finance_first_model
+[0m13:56:07.074835 [debug] [Thread-5 (]: Timing info for test.mark.unique_marketing_first_model_id.9d1dc805ac (compile): 2023-03-27 13:56:07.014851 => 2023-03-27 13:56:07.074502
+[0m13:56:07.075791 [debug] [Thread-4 (]: Began executing node model.mark.marketing_second_model
+[0m13:56:07.079825 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (execute): 2023-03-27 13:56:07.079505 => 2023-03-27 13:56:07.079559
+[0m13:56:07.082462 [debug] [Thread-5 (]: Began executing node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:56:07.085927 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (execute): 2023-03-27 13:56:07.085614 => 2023-03-27 13:56:07.085659
+[0m13:56:07.089932 [debug] [Thread-3 (]: Finished running node model.fina.finance_first_model
+[0m13:56:07.092281 [debug] [Thread-5 (]: Timing info for test.mark.unique_marketing_first_model_id.9d1dc805ac (execute): 2023-03-27 13:56:07.091859 => 2023-03-27 13:56:07.091923
+[0m13:56:07.096596 [debug] [Thread-4 (]: Finished running node model.mark.marketing_second_model
+[0m13:56:07.099999 [debug] [Thread-7 (]: Began running node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:56:07.103749 [debug] [Thread-5 (]: Finished running node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m13:56:07.108820 [debug] [Thread-2 (]: Began running node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:56:07.110163 [debug] [Thread-1 (]: Began running node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:56:07.112676 [debug] [Thread-7 (]: Acquiring new postgres connection 'test.fina.unique_finance_first_model_id.7cafc8c11d'
+[0m13:56:07.119874 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.mark.not_null_marketing_second_model_ID.4f2242678d'
+[0m13:56:07.123654 [debug] [Thread-1 (]: Acquiring new postgres connection 'test.mark.unique_marketing_second_model_ID.180ff0615f'
+[0m13:56:07.125948 [debug] [Thread-7 (]: Began compiling node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:56:07.128095 [debug] [Thread-2 (]: Began compiling node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:56:07.130333 [debug] [Thread-1 (]: Began compiling node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:56:07.164004 [debug] [Thread-7 (]: Writing injected SQL for node "test.fina.unique_finance_first_model_id.7cafc8c11d"
+[0m13:56:07.207123 [debug] [Thread-2 (]: Writing injected SQL for node "test.mark.not_null_marketing_second_model_ID.4f2242678d"
+[0m13:56:07.215034 [debug] [Thread-1 (]: Writing injected SQL for node "test.mark.unique_marketing_second_model_ID.180ff0615f"
+[0m13:56:07.218708 [debug] [Thread-7 (]: Timing info for test.fina.unique_finance_first_model_id.7cafc8c11d (compile): 2023-03-27 13:56:07.131970 => 2023-03-27 13:56:07.218376
+[0m13:56:07.220245 [debug] [Thread-2 (]: Timing info for test.mark.not_null_marketing_second_model_ID.4f2242678d (compile): 2023-03-27 13:56:07.150570 => 2023-03-27 13:56:07.219948
+[0m13:56:07.221355 [debug] [Thread-7 (]: Began executing node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:56:07.222128 [debug] [Thread-1 (]: Timing info for test.mark.unique_marketing_second_model_ID.180ff0615f (compile): 2023-03-27 13:56:07.185426 => 2023-03-27 13:56:07.221896
+[0m13:56:07.223392 [debug] [Thread-2 (]: Began executing node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:56:07.224765 [debug] [Thread-7 (]: Timing info for test.fina.unique_finance_first_model_id.7cafc8c11d (execute): 2023-03-27 13:56:07.224531 => 2023-03-27 13:56:07.224568
+[0m13:56:07.226188 [debug] [Thread-1 (]: Began executing node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:56:07.227590 [debug] [Thread-2 (]: Timing info for test.mark.not_null_marketing_second_model_ID.4f2242678d (execute): 2023-03-27 13:56:07.227351 => 2023-03-27 13:56:07.227386
+[0m13:56:07.231320 [debug] [Thread-7 (]: Finished running node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m13:56:07.232849 [debug] [Thread-1 (]: Timing info for test.mark.unique_marketing_second_model_ID.180ff0615f (execute): 2023-03-27 13:56:07.232619 => 2023-03-27 13:56:07.232649
+[0m13:56:07.236058 [debug] [Thread-2 (]: Finished running node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m13:56:07.240557 [debug] [Thread-1 (]: Finished running node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m13:56:07.246332 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:56:07.247948 [debug] [MainThread]: Connection 'test.mark.not_null_marketing_second_model_ID.4f2242678d' was properly closed.
+[0m13:56:07.249278 [debug] [MainThread]: Connection 'test.mark.unique_marketing_second_model_ID.180ff0615f' was properly closed.
+[0m13:56:07.250534 [debug] [MainThread]: Connection 'model.fina.finance_first_model' was properly closed.
+[0m13:56:07.251805 [debug] [MainThread]: Connection 'model.mark.marketing_second_model' was properly closed.
+[0m13:56:07.253173 [debug] [MainThread]: Connection 'test.mark.unique_marketing_first_model_id.9d1dc805ac' was properly closed.
+[0m13:56:07.254688 [debug] [MainThread]: Connection 'test.fina.unique_finance_first_model_id.7cafc8c11d' was properly closed.
+[0m13:56:07.257795 [debug] [MainThread]: Command end result
+[0m13:56:07.300426 [info ] [MainThread]: Done.
+[0m13:56:07.302836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074bd420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074bd900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074bd750>]}
+[0m13:56:07.304609 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 14:12:29.486135 | cc2df755-c017-4137-85c3-6a71a8f90986 ==============================
+[0m14:12:29.486135 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:12:29.497635 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m14:12:29.499631 [debug] [MainThread]: Tracking: tracking
+[0m14:12:29.530005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1a5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1a5c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a199f0>]}
+[0m14:12:29.536743 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-mhd4gga1'
+[0m14:12:29.539387 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m14:12:29.844027 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m14:12:29.847366 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m14:12:29.985656 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m14:12:30.013660 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m14:12:30.015832 [debug] [MainThread]: Executing "git --version"
+[0m14:12:30.042913 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:12:30.044978 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:30.047617 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m14:12:33.300434 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:33.302730 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m14:12:33.304270 [debug] [MainThread]: Executing "git sparse-checkout set mark"
+[0m14:12:34.341233 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:34.343498 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:34.345805 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m14:12:34.347332 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:34.377518 [debug] [MainThread]: STDOUT: "b'173cbba2444d31393b0dc0a4fc6d919ebeb038c6\n'"
+[0m14:12:34.379469 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:34.380862 [debug] [MainThread]:   Checking out revision 0.0.17.
+[0m14:12:34.382238 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.17"
+[0m14:12:34.420830 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:34.422714 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:34.424098 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.17"
+[0m14:12:35.821797 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:35.824018 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.17     -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.10     -> 0.0.10\n * [new tag]         0.0.11     -> 0.0.11\n * [new tag]         0.0.12     -> 0.0.12\n * [new tag]         0.0.13     -> 0.0.13\n * [new tag]         0.0.14     -> 0.0.14\n * [new tag]         0.0.15     -> 0.0.15\n * [new tag]         0.0.16     -> 0.0.16\n * [new tag]         0.0.17     -> 0.0.17\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.5      -> 0.0.5\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n * [new tag]         0.0.8      -> 0.0.8\n * [new tag]         0.0.9      -> 0.0.9\n'"
+[0m14:12:35.825550 [debug] [MainThread]: Executing "git tag --list"
+[0m14:12:35.861040 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.14\n0.0.15\n0.0.16\n0.0.17\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:12:35.863016 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:35.864730 [debug] [MainThread]: Executing "git reset --hard tags/0.0.17"
+[0m14:12:35.924380 [debug] [MainThread]: STDOUT: "b'HEAD is now at d72698f adding grants\n'"
+[0m14:12:35.926495 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:35.927918 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:35.958029 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:12:35.959968 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:35.961461 [debug] [MainThread]:   Checked out at d72698f.
+[0m14:12:35.998586 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m14:12:36.001148 [debug] [MainThread]: Executing "git --version"
+[0m14:12:36.027079 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:12:36.029501 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:36.031358 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m14:12:38.220346 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:38.222760 [debug] [MainThread]: STDERR: "b"Cloning into 'd69e44c6929a598321ac2d3b3231f032'...\n""
+[0m14:12:38.224385 [debug] [MainThread]: Executing "git sparse-checkout set fina"
+[0m14:12:39.212616 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:39.215033 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:39.216803 [debug] [MainThread]: Pulling new dependency d69e44c6929a598321ac2d3b3231f032.
+[0m14:12:39.218754 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:39.249820 [debug] [MainThread]: STDOUT: "b'748bca152b47c77be72e4eb84e3f0ce61d8c97fc\n'"
+[0m14:12:39.251942 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:39.253409 [debug] [MainThread]:   Checking out revision 0.0.10.
+[0m14:12:39.254868 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.10"
+[0m14:12:39.294975 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:39.296854 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:39.298339 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.10"
+[0m14:12:40.610670 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:40.613015 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.10     -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.10     -> 0.0.10\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n * [new tag]         0.0.8      -> 0.0.8\n * [new tag]         0.0.9      -> 0.0.9\n'"
+[0m14:12:40.614669 [debug] [MainThread]: Executing "git tag --list"
+[0m14:12:40.649243 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:12:40.651372 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:40.653044 [debug] [MainThread]: Executing "git reset --hard tags/0.0.10"
+[0m14:12:40.714613 [debug] [MainThread]: STDOUT: "b'HEAD is now at 9cdf0fe revert to postgres again\n'"
+[0m14:12:40.716974 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:40.718664 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:40.750356 [debug] [MainThread]: STDOUT: "b'9cdf0fe3659ce305f75441cd9c15a778ede09f9c\n'"
+[0m14:12:40.752257 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:40.753723 [debug] [MainThread]:   Checked out at 9cdf0fe.
+[0m14:12:40.812231 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m14:12:40.814082 [debug] [MainThread]: Executing "git --version"
+[0m14:12:40.837871 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:12:40.839939 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:40.841634 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m14:12:40.867311 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:40.869334 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m14:12:40.870705 [debug] [MainThread]: command return code=128
+[0m14:12:40.874785 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m14:12:40.876305 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:40.906393 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:12:40.908371 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:40.909813 [debug] [MainThread]:   Checking out revision 0.0.17.
+[0m14:12:40.911305 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.17"
+[0m14:12:40.953904 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:40.956164 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:40.957725 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.17"
+[0m14:12:42.132798 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:42.135415 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.17     -> FETCH_HEAD\n'"
+[0m14:12:42.137009 [debug] [MainThread]: Executing "git tag --list"
+[0m14:12:42.172551 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.14\n0.0.15\n0.0.16\n0.0.17\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:12:42.174712 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:42.176109 [debug] [MainThread]: Executing "git reset --hard tags/0.0.17"
+[0m14:12:42.231143 [debug] [MainThread]: STDOUT: "b'HEAD is now at d72698f adding grants\n'"
+[0m14:12:42.233481 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:42.234971 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:42.264193 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:12:42.265939 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:42.267324 [debug] [MainThread]: Already at d72698f, nothing to do.
+[0m14:12:42.303711 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m14:12:42.305350 [debug] [MainThread]: Executing "git --version"
+[0m14:12:42.328326 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:12:42.330379 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:42.332111 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m14:12:42.356591 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:42.358502 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m14:12:42.359885 [debug] [MainThread]: command return code=128
+[0m14:12:42.362743 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m14:12:42.364139 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:42.393264 [debug] [MainThread]: STDOUT: "b'9cdf0fe3659ce305f75441cd9c15a778ede09f9c\n'"
+[0m14:12:42.395197 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:42.396725 [debug] [MainThread]:   Checking out revision 0.0.10.
+[0m14:12:42.398204 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.10"
+[0m14:12:42.436897 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:42.438948 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:42.440375 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.10"
+[0m14:12:43.571455 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:43.573820 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.10     -> FETCH_HEAD\n'"
+[0m14:12:43.575415 [debug] [MainThread]: Executing "git tag --list"
+[0m14:12:43.610174 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:12:43.612257 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:43.613808 [debug] [MainThread]: Executing "git reset --hard tags/0.0.10"
+[0m14:12:43.670328 [debug] [MainThread]: STDOUT: "b'HEAD is now at 9cdf0fe revert to postgres again\n'"
+[0m14:12:43.672312 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:43.673808 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:43.703261 [debug] [MainThread]: STDOUT: "b'9cdf0fe3659ce305f75441cd9c15a778ede09f9c\n'"
+[0m14:12:43.705337 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:43.706751 [debug] [MainThread]: Already at 9cdf0fe, nothing to do.
+[0m14:12:43.744086 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m14:12:45.639788 [info ] [MainThread]:   Installed from version 0.9.6
+[0m14:12:45.641868 [info ] [MainThread]:   Updated version available: 1.0.0
+[0m14:12:45.643762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'cc2df755-c017-4137-85c3-6a71a8f90986', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4cf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a4c580>]}
+[0m14:12:45.645608 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-marketing.git
+[0m14:12:45.656368 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m14:12:45.658027 [debug] [MainThread]: Executing "git --version"
+[0m14:12:45.683425 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:12:45.685646 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:45.687375 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m14:12:45.713666 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:45.715830 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m14:12:45.717681 [debug] [MainThread]: command return code=128
+[0m14:12:45.720514 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m14:12:45.722066 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:45.753665 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:12:45.755823 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:45.757321 [debug] [MainThread]:   Checking out revision 0.0.17.
+[0m14:12:45.758772 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.17"
+[0m14:12:45.797970 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:45.800113 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:45.801478 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.17"
+[0m14:12:46.923290 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:46.925758 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.17     -> FETCH_HEAD\n'"
+[0m14:12:46.927325 [debug] [MainThread]: Executing "git tag --list"
+[0m14:12:46.961511 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.14\n0.0.15\n0.0.16\n0.0.17\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:12:46.963488 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:46.964984 [debug] [MainThread]: Executing "git reset --hard tags/0.0.17"
+[0m14:12:47.024064 [debug] [MainThread]: STDOUT: "b'HEAD is now at d72698f adding grants\n'"
+[0m14:12:47.026650 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:47.028257 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:47.059161 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:12:47.061375 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:47.062895 [debug] [MainThread]: Already at d72698f, nothing to do.
+[0m14:12:47.092524 [info ] [MainThread]:   Installed from revision 0.0.17
+[0m14:12:47.094394 [info ] [MainThread]:    and subdirectory mark
+[0m14:12:47.096218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'cc2df755-c017-4137-85c3-6a71a8f90986', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40059d7430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40059d7040>]}
+[0m14:12:47.098113 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-finance.git
+[0m14:12:47.107933 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m14:12:47.109813 [debug] [MainThread]: Executing "git --version"
+[0m14:12:47.136193 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:12:47.138532 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:47.140463 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m14:12:47.166392 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:47.168504 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m14:12:47.169914 [debug] [MainThread]: command return code=128
+[0m14:12:47.172577 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m14:12:47.173978 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:47.203939 [debug] [MainThread]: STDOUT: "b'9cdf0fe3659ce305f75441cd9c15a778ede09f9c\n'"
+[0m14:12:47.205878 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:47.207297 [debug] [MainThread]:   Checking out revision 0.0.10.
+[0m14:12:47.208693 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.10"
+[0m14:12:47.246503 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:47.248331 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:47.249824 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.10"
+[0m14:12:48.385544 [debug] [MainThread]: STDOUT: "b''"
+[0m14:12:48.387864 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.10     -> FETCH_HEAD\n'"
+[0m14:12:48.389706 [debug] [MainThread]: Executing "git tag --list"
+[0m14:12:48.424247 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:12:48.426144 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:48.427624 [debug] [MainThread]: Executing "git reset --hard tags/0.0.10"
+[0m14:12:48.483172 [debug] [MainThread]: STDOUT: "b'HEAD is now at 9cdf0fe revert to postgres again\n'"
+[0m14:12:48.485250 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:48.486826 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:12:48.517167 [debug] [MainThread]: STDOUT: "b'9cdf0fe3659ce305f75441cd9c15a778ede09f9c\n'"
+[0m14:12:48.519186 [debug] [MainThread]: STDERR: "b''"
+[0m14:12:48.520633 [debug] [MainThread]: Already at 9cdf0fe, nothing to do.
+[0m14:12:48.540811 [info ] [MainThread]:   Installed from revision 0.0.10
+[0m14:12:48.542524 [info ] [MainThread]:    and subdirectory fina
+[0m14:12:48.544276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'cc2df755-c017-4137-85c3-6a71a8f90986', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1b490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1ae60>]}
+[0m14:12:48.545888 [info ] [MainThread]: 
+[0m14:12:48.547784 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m14:12:48.556711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a199f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a19870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a18820>]}
+[0m14:12:48.558928 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 14:13:24.901378 | 4847a708-b297-4962-8607-34297cb4a7b4 ==============================
+[0m14:13:24.901378 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:13:24.913105 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['state:modified'], 'state': '.', 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:13:24.915048 [debug] [MainThread]: Tracking: tracking
+[0m14:13:24.945542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074a72e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074a7760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074a7340>]}
+[0m14:13:25.133481 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:13:25.190680 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m14:13:25.193067 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4847a708-b297-4962-8607-34297cb4a7b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074d10c0>]}
+[0m14:13:30.473391 [debug] [MainThread]: 1699: static parser successfully parsed example/finance_first_model.sql
+[0m14:13:30.574483 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_first_model.sql
+[0m14:13:30.593001 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_second_model.sql
+[0m14:13:30.943910 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.snow
+[0m14:13:30.973105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4847a708-b297-4962-8607-34297cb4a7b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075d30d0>]}
+[0m14:13:31.022786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4847a708-b297-4962-8607-34297cb4a7b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1f9a0>]}
+[0m14:13:31.025006 [info ] [MainThread]: Found 3 models, 4 tests, 0 snapshots, 0 analyses, 488 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m14:13:31.026787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4847a708-b297-4962-8607-34297cb4a7b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075dc7f0>]}
+[0m14:13:31.035252 [info ] [MainThread]: 
+[0m14:13:31.045517 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:13:31.052751 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m14:13:31.107536 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m14:13:31.109451 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:13:31.111309 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:13:31.150939 [debug] [ThreadPool]: SQL status: SELECT 8 in 0 seconds
+[0m14:13:31.158143 [debug] [ThreadPool]: On list_postgres: Close
+[0m14:13:31.166717 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_finance'
+[0m14:13:31.176197 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marketing'
+[0m14:13:31.220717 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m14:13:31.222701 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m14:13:31.224178 [debug] [ThreadPool]: On list_postgres_public_finance: BEGIN
+[0m14:13:31.225967 [debug] [ThreadPool]: On list_postgres_public_marketing: BEGIN
+[0m14:13:31.227672 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:13:31.229262 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:13:31.244241 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m14:13:31.245165 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m14:13:31.246489 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m14:13:31.248120 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m14:13:31.249836 [debug] [ThreadPool]: On list_postgres_public_finance: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_finance"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_finance'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_finance'
+  
+[0m14:13:31.251433 [debug] [ThreadPool]: On list_postgres_public_marketing: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_marketing"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marketing'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marketing'
+  
+[0m14:13:31.256537 [debug] [ThreadPool]: SQL status: SELECT 1 in 0 seconds
+[0m14:13:31.257688 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m14:13:31.263798 [debug] [ThreadPool]: On list_postgres_public_finance: ROLLBACK
+[0m14:13:31.269552 [debug] [ThreadPool]: On list_postgres_public_marketing: ROLLBACK
+[0m14:13:31.272407 [debug] [ThreadPool]: On list_postgres_public_finance: Close
+[0m14:13:31.273187 [debug] [ThreadPool]: On list_postgres_public_marketing: Close
+[0m14:13:31.307662 [debug] [MainThread]: Using postgres connection "master"
+[0m14:13:31.309822 [debug] [MainThread]: On master: BEGIN
+[0m14:13:31.311526 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:13:31.324378 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:13:31.326341 [debug] [MainThread]: Using postgres connection "master"
+[0m14:13:31.327851 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:13:31.335046 [debug] [MainThread]: SQL status: SELECT 2 in 0 seconds
+[0m14:13:31.341996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4847a708-b297-4962-8607-34297cb4a7b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400767f940>]}
+[0m14:13:31.344256 [debug] [MainThread]: On master: ROLLBACK
+[0m14:13:31.346868 [debug] [MainThread]: Using postgres connection "master"
+[0m14:13:31.348448 [debug] [MainThread]: On master: BEGIN
+[0m14:13:31.351664 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:13:31.353297 [debug] [MainThread]: On master: COMMIT
+[0m14:13:31.354829 [debug] [MainThread]: Using postgres connection "master"
+[0m14:13:31.356282 [debug] [MainThread]: On master: COMMIT
+[0m14:13:31.358748 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:13:31.360605 [debug] [MainThread]: On master: Close
+[0m14:13:31.363826 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m14:13:31.365925 [info ] [MainThread]: 
+[0m14:13:31.447903 [debug] [Thread-1 (]: Began running node model.mark.marketing_first_model
+[0m14:13:31.450535 [info ] [Thread-1 (]: 1 of 1 START sql table model public_marketing.first_model ...................... [RUN]
+[0m14:13:31.453987 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.mark.marketing_first_model'
+[0m14:13:31.455786 [debug] [Thread-1 (]: Began compiling node model.mark.marketing_first_model
+[0m14:13:31.470925 [debug] [Thread-1 (]: Writing injected SQL for node "model.mark.marketing_first_model"
+[0m14:13:31.475854 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (compile): 2023-03-27 14:13:31.457105 => 2023-03-27 14:13:31.475525
+[0m14:13:31.477554 [debug] [Thread-1 (]: Began executing node model.mark.marketing_first_model
+[0m14:13:31.675832 [debug] [Thread-1 (]: Writing runtime sql for node "model.mark.marketing_first_model"
+[0m14:13:31.687303 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:13:31.688885 [debug] [Thread-1 (]: On model.mark.marketing_first_model: BEGIN
+[0m14:13:31.690258 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:13:31.702917 [debug] [Thread-1 (]: SQL status: BEGIN in 0 seconds
+[0m14:13:31.704736 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:13:31.706270 [debug] [Thread-1 (]: On model.mark.marketing_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_first_model"} */
+
+  
+    
+
+  create  table "postgres"."public_marketing"."first_model__dbt_tmp"
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+    select 1 as id
+    union all
+    select null as id
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+  
+[0m14:13:31.709948 [debug] [Thread-1 (]: Postgres adapter: Postgres error: permission denied for schema public_marketing
+
+[0m14:13:31.711599 [debug] [Thread-1 (]: On model.mark.marketing_first_model: ROLLBACK
+[0m14:13:31.714300 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (execute): 2023-03-27 14:13:31.478792 => 2023-03-27 14:13:31.713979
+[0m14:13:31.715835 [debug] [Thread-1 (]: On model.mark.marketing_first_model: Close
+[0m14:13:31.724645 [debug] [Thread-1 (]: Database Error in model marketing_first_model (models/example/marketing_first_model.sql)
+  permission denied for schema public_marketing
+  compiled Code at target/run/mark/models/example/marketing_first_model.sql
+[0m14:13:31.727165 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4847a708-b297-4962-8607-34297cb4a7b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40404fed40>]}
+[0m14:13:31.730318 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model public_marketing.first_model ............. [[31mERROR[0m in 0.27s]
+[0m14:13:31.739940 [debug] [Thread-1 (]: Finished running node model.mark.marketing_first_model
+[0m14:13:31.747653 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:13:31.749683 [debug] [MainThread]: Using postgres connection "master"
+[0m14:13:31.751345 [debug] [MainThread]: On master: BEGIN
+[0m14:13:31.752913 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:13:31.765885 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:13:31.767695 [debug] [MainThread]: On master: COMMIT
+[0m14:13:31.769195 [debug] [MainThread]: Using postgres connection "master"
+[0m14:13:31.770608 [debug] [MainThread]: On master: COMMIT
+[0m14:13:31.773142 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:13:31.774742 [debug] [MainThread]: On master: Close
+[0m14:13:31.777618 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:13:31.779355 [debug] [MainThread]: Connection 'list_postgres_public_finance' was properly closed.
+[0m14:13:31.780844 [debug] [MainThread]: Connection 'model.mark.marketing_first_model' was properly closed.
+[0m14:13:31.782713 [info ] [MainThread]: 
+[0m14:13:31.784432 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.74 seconds (0.74s).
+[0m14:13:31.786319 [debug] [MainThread]: Command end result
+[0m14:13:31.824949 [info ] [MainThread]: 
+[0m14:13:31.826830 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m14:13:31.828563 [info ] [MainThread]: 
+[0m14:13:31.830177 [error] [MainThread]: [33mDatabase Error in model marketing_first_model (models/example/marketing_first_model.sql)[0m
+[0m14:13:31.831641 [error] [MainThread]:   permission denied for schema public_marketing
+[0m14:13:31.833072 [error] [MainThread]:   compiled Code at target/run/mark/models/example/marketing_first_model.sql
+[0m14:13:31.834456 [info ] [MainThread]: 
+[0m14:13:31.835892 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m14:13:31.837885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075d9c30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074f8c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074f97e0>]}
+[0m14:13:31.839891 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 14:26:03.261528 | 3e5545f1-3108-4ed3-9e48-36a996ce3433 ==============================
+[0m14:26:03.261528 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:26:03.272366 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'deps', 'rpc_method': 'deps', 'indirect_selection': 'eager'}
+[0m14:26:03.274144 [debug] [MainThread]: Tracking: tracking
+[0m14:26:03.304318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1a5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1a5c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a199f0>]}
+[0m14:26:03.310920 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-2bd8jv6u'
+[0m14:26:03.313508 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m14:26:03.664732 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m14:26:03.668160 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m14:26:03.871293 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m14:26:03.904541 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m14:26:03.906507 [debug] [MainThread]: Executing "git --version"
+[0m14:26:03.932899 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:26:03.935276 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:03.938182 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m14:26:06.127489 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:06.129976 [debug] [MainThread]: STDERR: "b"Cloning into 'e26f0c51fdd0ebb3cbb7f2b351672b0b'...\n""
+[0m14:26:06.131677 [debug] [MainThread]: Executing "git sparse-checkout set mark"
+[0m14:26:07.391941 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:07.394518 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:07.397094 [debug] [MainThread]: Pulling new dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m14:26:07.398825 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:07.430294 [debug] [MainThread]: STDOUT: "b'173cbba2444d31393b0dc0a4fc6d919ebeb038c6\n'"
+[0m14:26:07.432685 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:07.434353 [debug] [MainThread]:   Checking out revision 0.0.17.
+[0m14:26:07.435968 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.17"
+[0m14:26:07.475961 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:07.478193 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:07.479612 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.17"
+[0m14:26:08.810651 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:08.813059 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.17     -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.10     -> 0.0.10\n * [new tag]         0.0.11     -> 0.0.11\n * [new tag]         0.0.12     -> 0.0.12\n * [new tag]         0.0.13     -> 0.0.13\n * [new tag]         0.0.14     -> 0.0.14\n * [new tag]         0.0.15     -> 0.0.15\n * [new tag]         0.0.16     -> 0.0.16\n * [new tag]         0.0.17     -> 0.0.17\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.5      -> 0.0.5\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n * [new tag]         0.0.8      -> 0.0.8\n * [new tag]         0.0.9      -> 0.0.9\n'"
+[0m14:26:08.814785 [debug] [MainThread]: Executing "git tag --list"
+[0m14:26:08.851326 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.14\n0.0.15\n0.0.16\n0.0.17\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:26:08.853629 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:08.855276 [debug] [MainThread]: Executing "git reset --hard tags/0.0.17"
+[0m14:26:08.917741 [debug] [MainThread]: STDOUT: "b'HEAD is now at d72698f adding grants\n'"
+[0m14:26:08.920116 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:08.921503 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:08.952243 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:26:08.954369 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:08.956036 [debug] [MainThread]:   Checked out at d72698f.
+[0m14:26:08.994067 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m14:26:08.995915 [debug] [MainThread]: Executing "git --version"
+[0m14:26:09.019730 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:26:09.021925 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:09.023748 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m14:26:11.143374 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:11.146005 [debug] [MainThread]: STDERR: "b"Cloning into 'd69e44c6929a598321ac2d3b3231f032'...\n""
+[0m14:26:11.147833 [debug] [MainThread]: Executing "git sparse-checkout set fina"
+[0m14:26:12.150220 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:12.152743 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:12.154475 [debug] [MainThread]: Pulling new dependency d69e44c6929a598321ac2d3b3231f032.
+[0m14:26:12.156153 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:12.186600 [debug] [MainThread]: STDOUT: "b'3b189c2ead492832f5bff2899c30866f1dd78a23\n'"
+[0m14:26:12.188883 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:12.190403 [debug] [MainThread]:   Checking out revision 0.0.11.
+[0m14:26:12.191945 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.11"
+[0m14:26:12.231884 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:12.234068 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:12.235632 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.11"
+[0m14:26:13.596890 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:13.599333 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.11     -> FETCH_HEAD\n * [new tag]         0.0.1      -> 0.0.1\n * [new tag]         0.0.10     -> 0.0.10\n * [new tag]         0.0.2      -> 0.0.2\n * [new tag]         0.0.3      -> 0.0.3\n * [new tag]         0.0.4      -> 0.0.4\n * [new tag]         0.0.6      -> 0.0.6\n * [new tag]         0.0.7      -> 0.0.7\n * [new tag]         0.0.8      -> 0.0.8\n * [new tag]         0.0.9      -> 0.0.9\n'"
+[0m14:26:13.601073 [debug] [MainThread]: Executing "git tag --list"
+[0m14:26:13.637061 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:26:13.639325 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:13.640969 [debug] [MainThread]: Executing "git reset --hard tags/0.0.11"
+[0m14:26:13.701386 [debug] [MainThread]: STDOUT: "b'HEAD is now at 3b189c2 adding new table\n'"
+[0m14:26:13.703639 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:13.705109 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:13.736136 [debug] [MainThread]: STDOUT: "b'3b189c2ead492832f5bff2899c30866f1dd78a23\n'"
+[0m14:26:13.738194 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:13.739738 [debug] [MainThread]:   Checked out at 3b189c2.
+[0m14:26:13.799883 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m14:26:13.802113 [debug] [MainThread]: Executing "git --version"
+[0m14:26:13.829646 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:26:13.832133 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:13.834230 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m14:26:13.860256 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:13.862409 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m14:26:13.863894 [debug] [MainThread]: command return code=128
+[0m14:26:13.867780 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m14:26:13.869243 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:13.899025 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:26:13.901128 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:13.902615 [debug] [MainThread]:   Checking out revision 0.0.17.
+[0m14:26:13.904144 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.17"
+[0m14:26:13.943748 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:13.946040 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:13.947644 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.17"
+[0m14:26:15.112638 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:15.115208 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.17     -> FETCH_HEAD\n'"
+[0m14:26:15.116818 [debug] [MainThread]: Executing "git tag --list"
+[0m14:26:15.152513 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.14\n0.0.15\n0.0.16\n0.0.17\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:26:15.154775 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:15.156297 [debug] [MainThread]: Executing "git reset --hard tags/0.0.17"
+[0m14:26:15.214497 [debug] [MainThread]: STDOUT: "b'HEAD is now at d72698f adding grants\n'"
+[0m14:26:15.216719 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:15.218245 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:15.250835 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:26:15.253101 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:15.254618 [debug] [MainThread]: Already at d72698f, nothing to do.
+[0m14:26:15.292535 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m14:26:15.294594 [debug] [MainThread]: Executing "git --version"
+[0m14:26:15.318540 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:26:15.321091 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:15.322917 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m14:26:15.347694 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:15.349877 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m14:26:15.351377 [debug] [MainThread]: command return code=128
+[0m14:26:15.354168 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m14:26:15.355589 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:15.385350 [debug] [MainThread]: STDOUT: "b'3b189c2ead492832f5bff2899c30866f1dd78a23\n'"
+[0m14:26:15.387433 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:15.389024 [debug] [MainThread]:   Checking out revision 0.0.11.
+[0m14:26:15.390485 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.11"
+[0m14:26:15.432258 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:15.434690 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:15.436150 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.11"
+[0m14:26:16.578822 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:16.581650 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.11     -> FETCH_HEAD\n'"
+[0m14:26:16.583426 [debug] [MainThread]: Executing "git tag --list"
+[0m14:26:16.620482 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:26:16.622739 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:16.624264 [debug] [MainThread]: Executing "git reset --hard tags/0.0.11"
+[0m14:26:16.681053 [debug] [MainThread]: STDOUT: "b'HEAD is now at 3b189c2 adding new table\n'"
+[0m14:26:16.683227 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:16.684795 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:16.715513 [debug] [MainThread]: STDOUT: "b'3b189c2ead492832f5bff2899c30866f1dd78a23\n'"
+[0m14:26:16.717710 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:16.719128 [debug] [MainThread]: Already at 3b189c2, nothing to do.
+[0m14:26:16.756453 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m14:26:18.683522 [info ] [MainThread]:   Installed from version 0.9.6
+[0m14:26:18.685813 [info ] [MainThread]:   Updated version available: 1.0.0
+[0m14:26:18.687841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '3e5545f1-3108-4ed3-9e48-36a996ce3433', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a48430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a49f60>]}
+[0m14:26:18.699430 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-marketing.git
+[0m14:26:18.708959 [debug] [MainThread]:   Subdirectory specified: mark, using sparse checkout.
+[0m14:26:18.710680 [debug] [MainThread]: Executing "git --version"
+[0m14:26:18.737631 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:26:18.739983 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:18.742068 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-marketing.git e26f0c51fdd0ebb3cbb7f2b351672b0b"
+[0m14:26:18.769616 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:18.771746 [debug] [MainThread]: STDERR: "b"fatal: destination path 'e26f0c51fdd0ebb3cbb7f2b351672b0b' already exists and is not an empty directory.\n""
+[0m14:26:18.773172 [debug] [MainThread]: command return code=128
+[0m14:26:18.776051 [debug] [MainThread]: Updating existing dependency e26f0c51fdd0ebb3cbb7f2b351672b0b.
+[0m14:26:18.777472 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:18.808611 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:26:18.811042 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:18.812655 [debug] [MainThread]:   Checking out revision 0.0.17.
+[0m14:26:18.814496 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.17"
+[0m14:26:18.854681 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:18.857052 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:18.858607 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.17"
+[0m14:26:20.159185 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:20.161421 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-marketing\n * tag               0.0.17     -> FETCH_HEAD\n'"
+[0m14:26:20.163106 [debug] [MainThread]: Executing "git tag --list"
+[0m14:26:20.199326 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.12\n0.0.13\n0.0.14\n0.0.15\n0.0.16\n0.0.17\n0.0.2\n0.0.3\n0.0.4\n0.0.5\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:26:20.201629 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:20.203112 [debug] [MainThread]: Executing "git reset --hard tags/0.0.17"
+[0m14:26:20.260889 [debug] [MainThread]: STDOUT: "b'HEAD is now at d72698f adding grants\n'"
+[0m14:26:20.263241 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:20.264705 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:20.295420 [debug] [MainThread]: STDOUT: "b'd72698fb0c48507bf4cbe2bc5cf46716ea13e4df\n'"
+[0m14:26:20.297639 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:20.299124 [debug] [MainThread]: Already at d72698f, nothing to do.
+[0m14:26:20.326765 [info ] [MainThread]:   Installed from revision 0.0.17
+[0m14:26:20.328591 [info ] [MainThread]:    and subdirectory mark
+[0m14:26:20.330484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '3e5545f1-3108-4ed3-9e48-36a996ce3433', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40059cf430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40059cf040>]}
+[0m14:26:20.332260 [info ] [MainThread]: Installing https://github.com/bjornm82/dbt-finance.git
+[0m14:26:20.340929 [debug] [MainThread]:   Subdirectory specified: fina, using sparse checkout.
+[0m14:26:20.342505 [debug] [MainThread]: Executing "git --version"
+[0m14:26:20.366784 [debug] [MainThread]: STDOUT: "b'git version 2.30.2\n'"
+[0m14:26:20.368844 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:20.370660 [debug] [MainThread]: Executing "git clone --depth 1 --filter=blob:none --sparse https://github.com/bjornm82/dbt-finance.git d69e44c6929a598321ac2d3b3231f032"
+[0m14:26:20.396441 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:20.398565 [debug] [MainThread]: STDERR: "b"fatal: destination path 'd69e44c6929a598321ac2d3b3231f032' already exists and is not an empty directory.\n""
+[0m14:26:20.399939 [debug] [MainThread]: command return code=128
+[0m14:26:20.402615 [debug] [MainThread]: Updating existing dependency d69e44c6929a598321ac2d3b3231f032.
+[0m14:26:20.404160 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:20.435503 [debug] [MainThread]: STDOUT: "b'3b189c2ead492832f5bff2899c30866f1dd78a23\n'"
+[0m14:26:20.437618 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:20.439081 [debug] [MainThread]:   Checking out revision 0.0.11.
+[0m14:26:20.440476 [debug] [MainThread]: Executing "git remote set-branches origin 0.0.11"
+[0m14:26:20.479854 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:20.481960 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:20.483303 [debug] [MainThread]: Executing "git fetch origin --depth 1 --tags 0.0.11"
+[0m14:26:21.657989 [debug] [MainThread]: STDOUT: "b''"
+[0m14:26:21.660894 [debug] [MainThread]: STDERR: "b'From https://github.com/bjornm82/dbt-finance\n * tag               0.0.11     -> FETCH_HEAD\n'"
+[0m14:26:21.663186 [debug] [MainThread]: Executing "git tag --list"
+[0m14:26:21.709327 [debug] [MainThread]: STDOUT: "b'0.0.1\n0.0.10\n0.0.11\n0.0.2\n0.0.3\n0.0.4\n0.0.6\n0.0.7\n0.0.8\n0.0.9\n'"
+[0m14:26:21.712227 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:21.714042 [debug] [MainThread]: Executing "git reset --hard tags/0.0.11"
+[0m14:26:21.779661 [debug] [MainThread]: STDOUT: "b'HEAD is now at 3b189c2 adding new table\n'"
+[0m14:26:21.782032 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:21.783931 [debug] [MainThread]: Executing "git rev-parse HEAD"
+[0m14:26:21.816828 [debug] [MainThread]: STDOUT: "b'3b189c2ead492832f5bff2899c30866f1dd78a23\n'"
+[0m14:26:21.819106 [debug] [MainThread]: STDERR: "b''"
+[0m14:26:21.820543 [debug] [MainThread]: Already at 3b189c2, nothing to do.
+[0m14:26:21.846173 [info ] [MainThread]:   Installed from revision 0.0.11
+[0m14:26:21.848175 [info ] [MainThread]:    and subdirectory fina
+[0m14:26:21.850046 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '3e5545f1-3108-4ed3-9e48-36a996ce3433', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1b070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1ae60>]}
+[0m14:26:21.851750 [info ] [MainThread]: 
+[0m14:26:21.853451 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m14:26:21.862524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a199f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a19870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005a1a9e0>]}
+[0m14:26:21.864549 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 14:27:55.487509 | 639ba356-e6bc-4f15-bc3b-4572e6f1626a ==============================
+[0m14:27:55.487509 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:27:55.500359 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m14:27:55.502499 [debug] [MainThread]: Tracking: tracking
+[0m14:27:55.533783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b58460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b588e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b584c0>]}
+[0m14:27:55.746819 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:27:55.815512 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m14:27:55.818005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '639ba356-e6bc-4f15-bc3b-4572e6f1626a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b5a9b0>]}
+[0m14:28:01.395894 [debug] [MainThread]: 1699: static parser successfully parsed example/finance_first_model.sql
+[0m14:28:01.456322 [debug] [MainThread]: 1699: static parser successfully parsed example/finance_second_model.sql
+[0m14:28:01.555229 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_first_model.sql
+[0m14:28:01.573861 [debug] [MainThread]: 1699: static parser successfully parsed example/marketing_second_model.sql
+[0m14:28:01.937097 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.snow
+[0m14:28:01.965377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '639ba356-e6bc-4f15-bc3b-4572e6f1626a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40073e01f0>]}
+[0m14:28:02.013255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '639ba356-e6bc-4f15-bc3b-4572e6f1626a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400733a7a0>]}
+[0m14:28:02.015731 [info ] [MainThread]: Found 4 models, 5 tests, 0 snapshots, 0 analyses, 488 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m14:28:02.017444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '639ba356-e6bc-4f15-bc3b-4572e6f1626a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4007337460>]}
+[0m14:28:02.024279 [info ] [MainThread]: 
+[0m14:28:02.034148 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:28:02.042744 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marketing'
+[0m14:28:02.047163 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_finance'
+[0m14:28:02.144385 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m14:28:02.151614 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m14:28:02.152416 [debug] [ThreadPool]: On list_postgres_public_marketing: BEGIN
+[0m14:28:02.154083 [debug] [ThreadPool]: On list_postgres_public_finance: BEGIN
+[0m14:28:02.155833 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:28:02.157532 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:28:02.206109 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m14:28:02.207072 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m14:28:02.208639 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m14:28:02.210304 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m14:28:02.211891 [debug] [ThreadPool]: On list_postgres_public_finance: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_finance"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_finance'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_finance'
+  
+[0m14:28:02.213387 [debug] [ThreadPool]: On list_postgres_public_marketing: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_marketing"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marketing'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marketing'
+  
+[0m14:28:02.218996 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m14:28:02.219856 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m14:28:02.226499 [debug] [ThreadPool]: On list_postgres_public_finance: ROLLBACK
+[0m14:28:02.231791 [debug] [ThreadPool]: On list_postgres_public_marketing: ROLLBACK
+[0m14:28:02.234589 [debug] [ThreadPool]: On list_postgres_public_finance: Close
+[0m14:28:02.236590 [debug] [ThreadPool]: On list_postgres_public_marketing: Close
+[0m14:28:02.271285 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:02.273292 [debug] [MainThread]: On master: BEGIN
+[0m14:28:02.274945 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:28:02.287626 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:28:02.289552 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:02.291130 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:28:02.299375 [debug] [MainThread]: SQL status: SELECT 3 in 0 seconds
+[0m14:28:02.306811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '639ba356-e6bc-4f15-bc3b-4572e6f1626a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4007376440>]}
+[0m14:28:02.308900 [debug] [MainThread]: On master: ROLLBACK
+[0m14:28:02.311361 [debug] [MainThread]: On master: Close
+[0m14:28:02.314529 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m14:28:02.316590 [info ] [MainThread]: 
+[0m14:28:02.400356 [debug] [Thread-1 (]: Began running node model.mark.marketing_first_model
+[0m14:28:02.403891 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.mark.marketing_first_model'
+[0m14:28:02.405775 [debug] [Thread-1 (]: Began compiling node model.mark.marketing_first_model
+[0m14:28:02.419431 [debug] [Thread-1 (]: Writing injected SQL for node "model.mark.marketing_first_model"
+[0m14:28:02.425256 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (compile): 2023-03-27 14:28:02.407100 => 2023-03-27 14:28:02.424893
+[0m14:28:02.427032 [debug] [Thread-1 (]: Began executing node model.mark.marketing_first_model
+[0m14:28:02.428693 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (execute): 2023-03-27 14:28:02.428402 => 2023-03-27 14:28:02.428457
+[0m14:28:02.438428 [debug] [Thread-1 (]: Finished running node model.mark.marketing_first_model
+[0m14:28:02.443791 [debug] [Thread-3 (]: Began running node model.fina.finance_first_model
+[0m14:28:02.444903 [debug] [Thread-4 (]: Began running node model.mark.marketing_second_model
+[0m14:28:02.445867 [debug] [Thread-5 (]: Began running node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m14:28:02.448591 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.fina.finance_first_model'
+[0m14:28:02.451712 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.mark.marketing_second_model'
+[0m14:28:02.454656 [debug] [Thread-5 (]: Acquiring new postgres connection 'test.mark.unique_marketing_first_model_id.9d1dc805ac'
+[0m14:28:02.456299 [debug] [Thread-3 (]: Began compiling node model.fina.finance_first_model
+[0m14:28:02.458161 [debug] [Thread-4 (]: Began compiling node model.mark.marketing_second_model
+[0m14:28:02.459718 [debug] [Thread-5 (]: Began compiling node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m14:28:02.473455 [debug] [Thread-3 (]: Writing injected SQL for node "model.fina.finance_first_model"
+[0m14:28:02.487801 [debug] [Thread-4 (]: Writing injected SQL for node "model.mark.marketing_second_model"
+[0m14:28:02.538842 [debug] [Thread-5 (]: Writing injected SQL for node "test.mark.unique_marketing_first_model_id.9d1dc805ac"
+[0m14:28:02.540548 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (compile): 2023-03-27 14:28:02.461076 => 2023-03-27 14:28:02.540219
+[0m14:28:02.541752 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (compile): 2023-03-27 14:28:02.474718 => 2023-03-27 14:28:02.541333
+[0m14:28:02.543849 [debug] [Thread-3 (]: Began executing node model.fina.finance_first_model
+[0m14:28:02.545214 [debug] [Thread-5 (]: Timing info for test.mark.unique_marketing_first_model_id.9d1dc805ac (compile): 2023-03-27 14:28:02.488377 => 2023-03-27 14:28:02.544957
+[0m14:28:02.546034 [debug] [Thread-4 (]: Began executing node model.mark.marketing_second_model
+[0m14:28:02.547395 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (execute): 2023-03-27 14:28:02.547145 => 2023-03-27 14:28:02.547186
+[0m14:28:02.548863 [debug] [Thread-5 (]: Began executing node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m14:28:02.550186 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (execute): 2023-03-27 14:28:02.549973 => 2023-03-27 14:28:02.550001
+[0m14:28:02.553360 [debug] [Thread-3 (]: Finished running node model.fina.finance_first_model
+[0m14:28:02.554766 [debug] [Thread-5 (]: Timing info for test.mark.unique_marketing_first_model_id.9d1dc805ac (execute): 2023-03-27 14:28:02.554534 => 2023-03-27 14:28:02.554576
+[0m14:28:02.557839 [debug] [Thread-4 (]: Finished running node model.mark.marketing_second_model
+[0m14:28:02.560421 [debug] [Thread-7 (]: Began running node model.fina.finance_second_model
+[0m14:28:02.561693 [debug] [Thread-8 (]: Began running node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m14:28:02.564129 [debug] [Thread-5 (]: Finished running node test.mark.unique_marketing_first_model_id.9d1dc805ac
+[0m14:28:02.566807 [debug] [Thread-1 (]: Began running node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m14:28:02.568074 [debug] [Thread-6 (]: Began running node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m14:28:02.570207 [debug] [Thread-7 (]: Acquiring new postgres connection 'model.fina.finance_second_model'
+[0m14:28:02.573140 [debug] [Thread-8 (]: Acquiring new postgres connection 'test.fina.unique_finance_first_model_id.7cafc8c11d'
+[0m14:28:02.577129 [debug] [Thread-1 (]: Acquiring new postgres connection 'test.mark.not_null_marketing_second_model_ID.4f2242678d'
+[0m14:28:02.579966 [debug] [Thread-6 (]: Acquiring new postgres connection 'test.mark.unique_marketing_second_model_ID.180ff0615f'
+[0m14:28:02.581536 [debug] [Thread-7 (]: Began compiling node model.fina.finance_second_model
+[0m14:28:02.583053 [debug] [Thread-8 (]: Began compiling node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m14:28:02.584635 [debug] [Thread-1 (]: Began compiling node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m14:28:02.586122 [debug] [Thread-6 (]: Began compiling node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m14:28:02.611963 [debug] [Thread-7 (]: Writing injected SQL for node "model.fina.finance_second_model"
+[0m14:28:02.624815 [debug] [Thread-8 (]: Writing injected SQL for node "test.fina.unique_finance_first_model_id.7cafc8c11d"
+[0m14:28:02.688467 [debug] [Thread-1 (]: Writing injected SQL for node "test.mark.not_null_marketing_second_model_ID.4f2242678d"
+[0m14:28:02.690716 [debug] [Thread-6 (]: Writing injected SQL for node "test.mark.unique_marketing_second_model_ID.180ff0615f"
+[0m14:28:02.691446 [debug] [Thread-7 (]: Timing info for model.fina.finance_second_model (compile): 2023-03-27 14:28:02.587356 => 2023-03-27 14:28:02.691209
+[0m14:28:02.695057 [debug] [Thread-8 (]: Timing info for test.fina.unique_finance_first_model_id.7cafc8c11d (compile): 2023-03-27 14:28:02.605354 => 2023-03-27 14:28:02.694769
+[0m14:28:02.696697 [debug] [Thread-1 (]: Timing info for test.mark.not_null_marketing_second_model_ID.4f2242678d (compile): 2023-03-27 14:28:02.626008 => 2023-03-27 14:28:02.696328
+[0m14:28:02.697550 [debug] [Thread-7 (]: Began executing node model.fina.finance_second_model
+[0m14:28:02.698250 [debug] [Thread-6 (]: Timing info for test.mark.unique_marketing_second_model_ID.180ff0615f (compile): 2023-03-27 14:28:02.651045 => 2023-03-27 14:28:02.698037
+[0m14:28:02.699447 [debug] [Thread-8 (]: Began executing node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m14:28:02.701038 [debug] [Thread-1 (]: Began executing node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m14:28:02.702472 [debug] [Thread-7 (]: Timing info for model.fina.finance_second_model (execute): 2023-03-27 14:28:02.702238 => 2023-03-27 14:28:02.702275
+[0m14:28:02.703910 [debug] [Thread-6 (]: Began executing node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m14:28:02.705334 [debug] [Thread-8 (]: Timing info for test.fina.unique_finance_first_model_id.7cafc8c11d (execute): 2023-03-27 14:28:02.705089 => 2023-03-27 14:28:02.705120
+[0m14:28:02.706848 [debug] [Thread-1 (]: Timing info for test.mark.not_null_marketing_second_model_ID.4f2242678d (execute): 2023-03-27 14:28:02.706600 => 2023-03-27 14:28:02.706634
+[0m14:28:02.710129 [debug] [Thread-7 (]: Finished running node model.fina.finance_second_model
+[0m14:28:02.711654 [debug] [Thread-6 (]: Timing info for test.mark.unique_marketing_second_model_ID.180ff0615f (execute): 2023-03-27 14:28:02.711413 => 2023-03-27 14:28:02.711443
+[0m14:28:02.714917 [debug] [Thread-8 (]: Finished running node test.fina.unique_finance_first_model_id.7cafc8c11d
+[0m14:28:02.718133 [debug] [Thread-1 (]: Finished running node test.mark.not_null_marketing_second_model_ID.4f2242678d
+[0m14:28:02.720678 [debug] [Thread-2 (]: Began running node test.fina.unique_finance_second_model_id.60b4d9e4ce
+[0m14:28:02.723992 [debug] [Thread-6 (]: Finished running node test.mark.unique_marketing_second_model_ID.180ff0615f
+[0m14:28:02.729258 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.fina.unique_finance_second_model_id.60b4d9e4ce'
+[0m14:28:02.732090 [debug] [Thread-2 (]: Began compiling node test.fina.unique_finance_second_model_id.60b4d9e4ce
+[0m14:28:02.751023 [debug] [Thread-2 (]: Writing injected SQL for node "test.fina.unique_finance_second_model_id.60b4d9e4ce"
+[0m14:28:02.754944 [debug] [Thread-2 (]: Timing info for test.fina.unique_finance_second_model_id.60b4d9e4ce (compile): 2023-03-27 14:28:02.733365 => 2023-03-27 14:28:02.754541
+[0m14:28:02.756837 [debug] [Thread-2 (]: Began executing node test.fina.unique_finance_second_model_id.60b4d9e4ce
+[0m14:28:02.758327 [debug] [Thread-2 (]: Timing info for test.fina.unique_finance_second_model_id.60b4d9e4ce (execute): 2023-03-27 14:28:02.758038 => 2023-03-27 14:28:02.758088
+[0m14:28:02.761679 [debug] [Thread-2 (]: Finished running node test.fina.unique_finance_second_model_id.60b4d9e4ce
+[0m14:28:02.765871 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:28:02.767453 [debug] [MainThread]: Connection 'test.mark.not_null_marketing_second_model_ID.4f2242678d' was properly closed.
+[0m14:28:02.768786 [debug] [MainThread]: Connection 'test.fina.unique_finance_second_model_id.60b4d9e4ce' was properly closed.
+[0m14:28:02.770127 [debug] [MainThread]: Connection 'model.fina.finance_first_model' was properly closed.
+[0m14:28:02.771424 [debug] [MainThread]: Connection 'model.mark.marketing_second_model' was properly closed.
+[0m14:28:02.773059 [debug] [MainThread]: Connection 'test.mark.unique_marketing_first_model_id.9d1dc805ac' was properly closed.
+[0m14:28:02.774451 [debug] [MainThread]: Connection 'model.fina.finance_second_model' was properly closed.
+[0m14:28:02.775835 [debug] [MainThread]: Connection 'test.fina.unique_finance_first_model_id.7cafc8c11d' was properly closed.
+[0m14:28:02.777339 [debug] [MainThread]: Connection 'test.mark.unique_marketing_second_model_ID.180ff0615f' was properly closed.
+[0m14:28:02.780841 [debug] [MainThread]: Command end result
+[0m14:28:02.823424 [info ] [MainThread]: Done.
+[0m14:28:02.825321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4007337460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40059d7af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40073e2c80>]}
+[0m14:28:02.826912 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-27 14:28:14.471922 | b7219558-47f1-4cc1-b6f5-817d93796a6e ==============================
+[0m14:28:14.471922 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:28:14.483344 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/root/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:28:14.485301 [debug] [MainThread]: Tracking: tracking
+[0m14:28:14.512451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b58460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b588e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b584c0>]}
+[0m14:28:14.699935 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:28:15.062688 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:28:15.064457 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:28:15.067851 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.snow
+[0m14:28:15.098596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x400749c0d0>]}
+[0m14:28:15.148512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074609a0>]}
+[0m14:28:15.150864 [info ] [MainThread]: Found 4 models, 5 tests, 0 snapshots, 0 analyses, 488 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m14:28:15.152499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074609d0>]}
+[0m14:28:15.159235 [info ] [MainThread]: 
+[0m14:28:15.169289 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:28:15.179490 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m14:28:15.183945 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m14:28:15.287562 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m14:28:15.289072 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m14:28:15.290436 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:28:15.292044 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:28:15.293995 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:28:15.295518 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:28:15.344353 [debug] [ThreadPool]: SQL status: SELECT 8 in 0 seconds
+[0m14:28:15.345394 [debug] [ThreadPool]: SQL status: SELECT 8 in 0 seconds
+[0m14:28:15.352284 [debug] [ThreadPool]: On list_postgres: Close
+[0m14:28:15.358170 [debug] [ThreadPool]: On list_postgres: Close
+[0m14:28:15.369767 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_marketing'
+[0m14:28:15.372622 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_finance'
+[0m14:28:15.423524 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m14:28:15.425435 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m14:28:15.426871 [debug] [ThreadPool]: On list_postgres_public_marketing: BEGIN
+[0m14:28:15.428659 [debug] [ThreadPool]: On list_postgres_public_finance: BEGIN
+[0m14:28:15.430295 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:28:15.431781 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:28:15.446785 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m14:28:15.447721 [debug] [ThreadPool]: SQL status: BEGIN in 0 seconds
+[0m14:28:15.449244 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_marketing"
+[0m14:28:15.450924 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_finance"
+[0m14:28:15.452508 [debug] [ThreadPool]: On list_postgres_public_marketing: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_marketing"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_marketing'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_marketing'
+  
+[0m14:28:15.454110 [debug] [ThreadPool]: On list_postgres_public_finance: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "list_postgres_public_finance"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_finance'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_finance'
+  
+[0m14:28:15.458582 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m14:28:15.459708 [debug] [ThreadPool]: SQL status: SELECT 2 in 0 seconds
+[0m14:28:15.465627 [debug] [ThreadPool]: On list_postgres_public_marketing: ROLLBACK
+[0m14:28:15.471720 [debug] [ThreadPool]: On list_postgres_public_finance: ROLLBACK
+[0m14:28:15.474611 [debug] [ThreadPool]: On list_postgres_public_marketing: Close
+[0m14:28:15.476234 [debug] [ThreadPool]: On list_postgres_public_finance: Close
+[0m14:28:15.509166 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:15.511330 [debug] [MainThread]: On master: BEGIN
+[0m14:28:15.512894 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:28:15.525730 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:28:15.527634 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:15.529401 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:28:15.537551 [debug] [MainThread]: SQL status: SELECT 3 in 0 seconds
+[0m14:28:15.545742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b28670>]}
+[0m14:28:15.548088 [debug] [MainThread]: On master: ROLLBACK
+[0m14:28:15.550676 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:15.552269 [debug] [MainThread]: On master: BEGIN
+[0m14:28:15.555474 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:28:15.557037 [debug] [MainThread]: On master: COMMIT
+[0m14:28:15.558540 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:15.559964 [debug] [MainThread]: On master: COMMIT
+[0m14:28:15.562414 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:28:15.564185 [debug] [MainThread]: On master: Close
+[0m14:28:15.567386 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m14:28:15.569535 [info ] [MainThread]: 
+[0m14:28:15.652439 [debug] [Thread-1 (]: Began running node model.mark.marketing_first_model
+[0m14:28:15.654963 [info ] [Thread-1 (]: 1 of 4 START sql table model public_marketing.first_model ...................... [RUN]
+[0m14:28:15.658450 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.mark.marketing_first_model'
+[0m14:28:15.660189 [debug] [Thread-1 (]: Began compiling node model.mark.marketing_first_model
+[0m14:28:15.676458 [debug] [Thread-1 (]: Writing injected SQL for node "model.mark.marketing_first_model"
+[0m14:28:15.681062 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (compile): 2023-03-27 14:28:15.661570 => 2023-03-27 14:28:15.680733
+[0m14:28:15.683152 [debug] [Thread-1 (]: Began executing node model.mark.marketing_first_model
+[0m14:28:15.880849 [debug] [Thread-1 (]: Writing runtime sql for node "model.mark.marketing_first_model"
+[0m14:28:15.885942 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:28:15.887503 [debug] [Thread-1 (]: On model.mark.marketing_first_model: BEGIN
+[0m14:28:15.888855 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:28:15.901978 [debug] [Thread-1 (]: SQL status: BEGIN in 0 seconds
+[0m14:28:15.903785 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:28:15.905174 [debug] [Thread-1 (]: On model.mark.marketing_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_first_model"} */
+
+  
+    
+
+  create  table "postgres"."public_marketing"."first_model__dbt_tmp"
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+    select 1 as id
+    union all
+    select null as id
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+  
+[0m14:28:15.909030 [debug] [Thread-1 (]: SQL status: SELECT 2 in 0 seconds
+[0m14:28:15.938987 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:28:15.940943 [debug] [Thread-1 (]: On model.mark.marketing_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_first_model"} */
+alter table "postgres"."public_marketing"."first_model" rename to "first_model__dbt_backup"
+[0m14:28:15.943703 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0 seconds
+[0m14:28:15.957267 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:28:15.958867 [debug] [Thread-1 (]: On model.mark.marketing_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_first_model"} */
+alter table "postgres"."public_marketing"."first_model__dbt_tmp" rename to "first_model"
+[0m14:28:15.961481 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0 seconds
+[0m14:28:16.121720 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:28:16.124041 [debug] [Thread-1 (]: On model.mark.marketing_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_first_model"} */
+
+        
+            grant select on "postgres"."public_marketing"."first_model" to fina;
+        
+    
+[0m14:28:16.127217 [debug] [Thread-1 (]: SQL status: GRANT in 0 seconds
+[0m14:28:16.157599 [debug] [Thread-1 (]: On model.mark.marketing_first_model: COMMIT
+[0m14:28:16.159625 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:28:16.161232 [debug] [Thread-1 (]: On model.mark.marketing_first_model: COMMIT
+[0m14:28:16.164481 [debug] [Thread-1 (]: SQL status: COMMIT in 0 seconds
+[0m14:28:16.189632 [debug] [Thread-1 (]: Using postgres connection "model.mark.marketing_first_model"
+[0m14:28:16.191430 [debug] [Thread-1 (]: On model.mark.marketing_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_first_model"} */
+drop table if exists "postgres"."public_marketing"."first_model__dbt_backup" cascade
+[0m14:28:16.195450 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0 seconds
+[0m14:28:16.201188 [debug] [Thread-1 (]: Timing info for model.mark.marketing_first_model (execute): 2023-03-27 14:28:15.684420 => 2023-03-27 14:28:16.200969
+[0m14:28:16.202688 [debug] [Thread-1 (]: On model.mark.marketing_first_model: Close
+[0m14:28:16.206065 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40075875b0>]}
+[0m14:28:16.209782 [info ] [Thread-1 (]: 1 of 4 OK created sql table model public_marketing.first_model ................. [[32mSELECT 2[0m in 0.55s]
+[0m14:28:16.221667 [debug] [Thread-1 (]: Finished running node model.mark.marketing_first_model
+[0m14:28:16.226733 [debug] [Thread-3 (]: Began running node model.fina.finance_first_model
+[0m14:28:16.227813 [debug] [Thread-4 (]: Began running node model.mark.marketing_second_model
+[0m14:28:16.229400 [info ] [Thread-3 (]: 2 of 4 START sql view model public_finance.finance_first_model ................. [RUN]
+[0m14:28:16.231610 [info ] [Thread-4 (]: 3 of 4 START sql view model public_marketing.second_model ...................... [RUN]
+[0m14:28:16.234888 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.fina.finance_first_model'
+[0m14:28:16.238223 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.mark.marketing_second_model'
+[0m14:28:16.240091 [debug] [Thread-3 (]: Began compiling node model.fina.finance_first_model
+[0m14:28:16.241689 [debug] [Thread-4 (]: Began compiling node model.mark.marketing_second_model
+[0m14:28:16.255390 [debug] [Thread-3 (]: Writing injected SQL for node "model.fina.finance_first_model"
+[0m14:28:16.269852 [debug] [Thread-4 (]: Writing injected SQL for node "model.mark.marketing_second_model"
+[0m14:28:16.274628 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (compile): 2023-03-27 14:28:16.243051 => 2023-03-27 14:28:16.274273
+[0m14:28:16.275542 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (compile): 2023-03-27 14:28:16.256524 => 2023-03-27 14:28:16.275288
+[0m14:28:16.276928 [debug] [Thread-3 (]: Began executing node model.fina.finance_first_model
+[0m14:28:16.278543 [debug] [Thread-4 (]: Began executing node model.mark.marketing_second_model
+[0m14:28:16.449313 [debug] [Thread-3 (]: Writing runtime sql for node "model.fina.finance_first_model"
+[0m14:28:16.455797 [debug] [Thread-4 (]: Writing runtime sql for node "model.mark.marketing_second_model"
+[0m14:28:16.461485 [debug] [Thread-4 (]: Using postgres connection "model.mark.marketing_second_model"
+[0m14:28:16.463147 [debug] [Thread-4 (]: On model.mark.marketing_second_model: BEGIN
+[0m14:28:16.464642 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m14:28:16.467565 [debug] [Thread-3 (]: Using postgres connection "model.fina.finance_first_model"
+[0m14:28:16.469500 [debug] [Thread-3 (]: On model.fina.finance_first_model: BEGIN
+[0m14:28:16.471450 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:28:16.478987 [debug] [Thread-4 (]: SQL status: BEGIN in 0 seconds
+[0m14:28:16.480759 [debug] [Thread-4 (]: Using postgres connection "model.mark.marketing_second_model"
+[0m14:28:16.482843 [debug] [Thread-4 (]: On model.mark.marketing_second_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_second_model"} */
+
+  create view "postgres"."public_marketing"."second_model__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+
+
+select *
+from "postgres"."public_marketing"."first_model"
+where id = 1
+  );
+[0m14:28:16.483763 [debug] [Thread-3 (]: SQL status: BEGIN in 0 seconds
+[0m14:28:16.486037 [debug] [Thread-3 (]: Using postgres connection "model.fina.finance_first_model"
+[0m14:28:16.487588 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0 seconds
+[0m14:28:16.488275 [debug] [Thread-3 (]: On model.fina.finance_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.fina.finance_first_model"} */
+
+  create view "postgres"."public_finance"."finance_first_model__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "postgres"."public_marketing"."first_model"
+where id = 1
+  );
+[0m14:28:16.502856 [debug] [Thread-4 (]: Using postgres connection "model.mark.marketing_second_model"
+[0m14:28:16.505340 [debug] [Thread-4 (]: On model.mark.marketing_second_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_second_model"} */
+alter table "postgres"."public_marketing"."second_model__dbt_tmp" rename to "second_model"
+[0m14:28:16.506375 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0 seconds
+[0m14:28:16.513579 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0 seconds
+[0m14:28:16.523524 [debug] [Thread-3 (]: Using postgres connection "model.fina.finance_first_model"
+[0m14:28:16.530216 [debug] [Thread-4 (]: On model.mark.marketing_second_model: COMMIT
+[0m14:28:16.531585 [debug] [Thread-3 (]: On model.fina.finance_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.fina.finance_first_model"} */
+alter table "postgres"."public_finance"."finance_first_model__dbt_tmp" rename to "finance_first_model"
+[0m14:28:16.533271 [debug] [Thread-4 (]: Using postgres connection "model.mark.marketing_second_model"
+[0m14:28:16.535704 [debug] [Thread-4 (]: On model.mark.marketing_second_model: COMMIT
+[0m14:28:16.536440 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0 seconds
+[0m14:28:16.544277 [debug] [Thread-4 (]: SQL status: COMMIT in 0 seconds
+[0m14:28:16.545721 [debug] [Thread-3 (]: On model.fina.finance_first_model: COMMIT
+[0m14:28:16.556671 [debug] [Thread-4 (]: Using postgres connection "model.mark.marketing_second_model"
+[0m14:28:16.557899 [debug] [Thread-3 (]: Using postgres connection "model.fina.finance_first_model"
+[0m14:28:16.559274 [debug] [Thread-4 (]: On model.mark.marketing_second_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.mark.marketing_second_model"} */
+drop view if exists "postgres"."public_marketing"."second_model__dbt_backup" cascade
+[0m14:28:16.560647 [debug] [Thread-3 (]: On model.fina.finance_first_model: COMMIT
+[0m14:28:16.563117 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0 seconds
+[0m14:28:16.564339 [debug] [Thread-3 (]: SQL status: COMMIT in 0 seconds
+[0m14:28:16.569636 [debug] [Thread-4 (]: Timing info for model.mark.marketing_second_model (execute): 2023-03-27 14:28:16.296917 => 2023-03-27 14:28:16.569423
+[0m14:28:16.580943 [debug] [Thread-3 (]: Using postgres connection "model.fina.finance_first_model"
+[0m14:28:16.582207 [debug] [Thread-4 (]: On model.mark.marketing_second_model: Close
+[0m14:28:16.583645 [debug] [Thread-3 (]: On model.fina.finance_first_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.fina.finance_first_model"} */
+drop view if exists "postgres"."public_finance"."finance_first_model__dbt_backup" cascade
+[0m14:28:16.587094 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40076a6ef0>]}
+[0m14:28:16.590552 [info ] [Thread-4 (]: 3 of 4 OK created sql view model public_marketing.second_model ................. [[32mCREATE VIEW[0m in 0.35s]
+[0m14:28:16.591618 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0 seconds
+[0m14:28:16.593301 [debug] [Thread-4 (]: Finished running node model.mark.marketing_second_model
+[0m14:28:16.599134 [debug] [Thread-3 (]: Timing info for model.fina.finance_first_model (execute): 2023-03-27 14:28:16.279755 => 2023-03-27 14:28:16.598927
+[0m14:28:16.601903 [debug] [Thread-3 (]: On model.fina.finance_first_model: Close
+[0m14:28:16.605498 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40076a4a30>]}
+[0m14:28:16.608156 [info ] [Thread-3 (]: 2 of 4 OK created sql view model public_finance.finance_first_model ............ [[32mCREATE VIEW[0m in 0.37s]
+[0m14:28:16.610576 [debug] [Thread-3 (]: Finished running node model.fina.finance_first_model
+[0m14:28:16.614070 [debug] [Thread-6 (]: Began running node model.fina.finance_second_model
+[0m14:28:16.616113 [info ] [Thread-6 (]: 4 of 4 START sql view model public_finance.finance_second_model ................ [RUN]
+[0m14:28:16.619372 [debug] [Thread-6 (]: Acquiring new postgres connection 'model.fina.finance_second_model'
+[0m14:28:16.621183 [debug] [Thread-6 (]: Began compiling node model.fina.finance_second_model
+[0m14:28:16.634958 [debug] [Thread-6 (]: Writing injected SQL for node "model.fina.finance_second_model"
+[0m14:28:16.639027 [debug] [Thread-6 (]: Timing info for model.fina.finance_second_model (compile): 2023-03-27 14:28:16.622566 => 2023-03-27 14:28:16.638732
+[0m14:28:16.640691 [debug] [Thread-6 (]: Began executing node model.fina.finance_second_model
+[0m14:28:16.659834 [debug] [Thread-6 (]: Writing runtime sql for node "model.fina.finance_second_model"
+[0m14:28:16.663958 [debug] [Thread-6 (]: Using postgres connection "model.fina.finance_second_model"
+[0m14:28:16.665438 [debug] [Thread-6 (]: On model.fina.finance_second_model: BEGIN
+[0m14:28:16.666752 [debug] [Thread-6 (]: Opening a new connection, currently in state init
+[0m14:28:16.679267 [debug] [Thread-6 (]: SQL status: BEGIN in 0 seconds
+[0m14:28:16.681038 [debug] [Thread-6 (]: Using postgres connection "model.fina.finance_second_model"
+[0m14:28:16.682437 [debug] [Thread-6 (]: On model.fina.finance_second_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.fina.finance_second_model"} */
+
+  create view "postgres"."public_finance"."finance_second_model__dbt_tmp" as (
+    select *
+from "postgres"."public_finance"."finance_first_model"
+  );
+[0m14:28:16.686172 [debug] [Thread-6 (]: SQL status: CREATE VIEW in 0 seconds
+[0m14:28:16.699876 [debug] [Thread-6 (]: Using postgres connection "model.fina.finance_second_model"
+[0m14:28:16.701485 [debug] [Thread-6 (]: On model.fina.finance_second_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.fina.finance_second_model"} */
+alter table "postgres"."public_finance"."finance_second_model__dbt_tmp" rename to "finance_second_model"
+[0m14:28:16.704136 [debug] [Thread-6 (]: SQL status: ALTER TABLE in 0 seconds
+[0m14:28:16.711698 [debug] [Thread-6 (]: On model.fina.finance_second_model: COMMIT
+[0m14:28:16.713351 [debug] [Thread-6 (]: Using postgres connection "model.fina.finance_second_model"
+[0m14:28:16.714673 [debug] [Thread-6 (]: On model.fina.finance_second_model: COMMIT
+[0m14:28:16.717652 [debug] [Thread-6 (]: SQL status: COMMIT in 0 seconds
+[0m14:28:16.729052 [debug] [Thread-6 (]: Using postgres connection "model.fina.finance_second_model"
+[0m14:28:16.730720 [debug] [Thread-6 (]: On model.fina.finance_second_model: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "snow", "target_name": "dev", "node_id": "model.fina.finance_second_model"} */
+drop view if exists "postgres"."public_finance"."finance_second_model__dbt_backup" cascade
+[0m14:28:16.733380 [debug] [Thread-6 (]: SQL status: DROP VIEW in 0 seconds
+[0m14:28:16.739300 [debug] [Thread-6 (]: Timing info for model.fina.finance_second_model (execute): 2023-03-27 14:28:16.641892 => 2023-03-27 14:28:16.739077
+[0m14:28:16.740952 [debug] [Thread-6 (]: On model.fina.finance_second_model: Close
+[0m14:28:16.744270 [debug] [Thread-6 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b7219558-47f1-4cc1-b6f5-817d93796a6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40076a76d0>]}
+[0m14:28:16.746838 [info ] [Thread-6 (]: 4 of 4 OK created sql view model public_finance.finance_second_model ........... [[32mCREATE VIEW[0m in 0.13s]
+[0m14:28:16.749171 [debug] [Thread-6 (]: Finished running node model.fina.finance_second_model
+[0m14:28:16.755347 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:28:16.757289 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:16.759168 [debug] [MainThread]: On master: BEGIN
+[0m14:28:16.760707 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:28:16.773435 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:28:16.775340 [debug] [MainThread]: On master: COMMIT
+[0m14:28:16.776920 [debug] [MainThread]: Using postgres connection "master"
+[0m14:28:16.778421 [debug] [MainThread]: On master: COMMIT
+[0m14:28:16.781064 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:28:16.782742 [debug] [MainThread]: On master: Close
+[0m14:28:16.785692 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:28:16.787504 [debug] [MainThread]: Connection 'list_postgres_public_marketing' was properly closed.
+[0m14:28:16.789121 [debug] [MainThread]: Connection 'model.mark.marketing_first_model' was properly closed.
+[0m14:28:16.790608 [debug] [MainThread]: Connection 'model.fina.finance_first_model' was properly closed.
+[0m14:28:16.792021 [debug] [MainThread]: Connection 'model.mark.marketing_second_model' was properly closed.
+[0m14:28:16.793460 [debug] [MainThread]: Connection 'model.fina.finance_second_model' was properly closed.
+[0m14:28:16.795433 [info ] [MainThread]: 
+[0m14:28:16.797217 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 1.63 seconds (1.63s).
+[0m14:28:16.800025 [debug] [MainThread]: Command end result
+[0m14:28:16.842812 [info ] [MainThread]: 
+[0m14:28:16.844833 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:28:16.846519 [info ] [MainThread]: 
+[0m14:28:16.848183 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m14:28:16.850041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b28670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x4005b28f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x40074602e0>]}
+[0m14:28:16.851649 [debug] [MainThread]: Flushing usage events
