@@ -6,4 +6,4 @@ packages:
     revision: "{{env_var('DBT_MARK_BRANCH','0.0.11')}}"
   - git: https://github.com/bjornm82/dbt-finance.git
     subdirectory: "fina"
-    revision: "{{env_var('DBT_FINA_BRANCH','0.0.6')}}"
+    revision: "{{env_var('DBT_FINA_BRANCH','0.0.7')}}"
