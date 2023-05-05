@@ -2,6 +2,7 @@
 # of apple
 PLATFORM?=linux/amd64
 DBT_VERSION?=1.5.0
+IMAGE?=bjornmooijekind/dbt-snowboard
 
 # AWS configuration,
 AWS_REGION?=eu-central-1
@@ -18,11 +19,18 @@ AWS_ENVS?= -e AWS_REGION=${AWS_REGION} \
 
 VOLUME_DBT?=${PWD}/my_project:/usr/app/my_project
 
-IMAGE?=bjornmooijekind/dbt-test:${DBT_VERSION}
-
 .PHONY: build
 build:
-	docker build --build-arg DBT_VERSION=${DBT_VERSION} --platform ${PLATFORM} -t ${IMAGE} .
+	docker build --build-arg DBT_VERSION=${DBT_VERSION} --platform ${PLATFORM} -t ${IMAGE}:${DBT_VERSION} .
+
+.PHONY: tag-latest
+tag-latest:
+	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
+
+.PHONY: push
+push:
+	docker push ${IMAGE}:${DBT_VERSION} && \
+	docker push ${IMAGE}:latest
 
 .PHONY: run
 run:
