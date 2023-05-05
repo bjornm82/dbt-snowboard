@@ -1,23 +1,16 @@
+FROM python:3.11.2-slim-bullseye
+
 ARG DBT_VERSION
-FROM ghcr.io/dbt-labs/dbt-core:${DBT_VERSION}
-
-RUN apt-get update
-RUN apt-get install unixodbc-dev -y \
-    python3-dev -y \
-    curl -y \
-    gcc libsasl2-dev libsasl2-modules -y
-
+RUN pip install dbt-core==${DBT_VERSION}
 RUN pip install dbt-postgres
 
-RUN dbt --version
+RUN mkdir -p /usr/app/my_project/
 
-ARG PROJECT_NAME
+# Git is required to run dbt deps.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    apt-get clean
 
-COPY ${PROJECT_NAME}/target/manifest.json /usr/app/${PROJECT_NAME}/manifest.json
-COPY ${PROJECT_NAME}/dbt_project.yml /usr/app/${PROJECT_NAME}/dbt_project.yml
-COPY ${PROJECT_NAME}/packages.yml /usr/app/${PROJECT_NAME}/packages.yml
-COPY ${PROJECT_NAME}/dbt_packages /usr/app/${PROJECT_NAME}/dbt_packages
+WORKDIR /usr/app/my_project/
 
-WORKDIR /usr/app/${PROJECT_NAME}
-
-# ENTRYPOINT [ "/bin/bash" ]
+CMD [ "dbt", "--version" ]

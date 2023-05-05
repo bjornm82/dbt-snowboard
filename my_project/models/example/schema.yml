@@ -1,0 +1,69 @@
+
+version: 2
+
+groups:
+  - name: customer_success
+    owner:
+      name: Customer Success Team
+      email: cx@jaffle.shop
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    group: customer_success
+    access: public
+    config:
+      materialized: view
+      contract:
+        enforced: true
+    versions:
+      - v: 1
+        columns:
+          - name: id
+            data_type: int
+            description: "The primary key for this table"
+            tests:
+              - unique
+              - not_null
+      - v: uat
+        columns:
+          - name: id
+            data_type: int
+            description: "The main primary key for this table"
+            tests:
+              - unique
+              - not_null
+    latest_version: 1
+
+  - name: my_third_dbt_model
+    group: customer_success
+    access: public
+    description: "A third model based on version dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+
+  - name: dim_customers
+    group: customer_success
+    access: private
+    config:
+      materialized: table
+      contract:
+        enforced: true
+    columns:
+      - name: customer_id
+        data_type: int
+        constraints:
+          - type: not_null
+      - name: customer_name
+        data_type: varchar
