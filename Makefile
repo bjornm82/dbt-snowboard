@@ -32,22 +32,22 @@ push:
 	docker push ${IMAGE}:${DBT_VERSION} && \
 	docker push ${IMAGE}:latest
 
+.PHONY: run-deps
+run-deps:
+	docker run --pull=always --rm  -v ${VOLUME_DBT} -it ${IMAGE}:latest dbt deps --profiles-dir=.
+
 .PHONY: run
 run:
-	docker run --rm -it -v ${VOLUME_DBT}  ${IMAGE} dbt run --profiles-dir=.
+	docker run --pull=always --rm -it -v ${VOLUME_DBT}  ${IMAGE}:latest dbt run --profiles-dir=.
 
 .PHONY: test
 test:
-	docker run --rm -it -v ${VOLUME_DBT} ${IMAGE} dbt test --profiles-dir=.
+	docker run --pull=always --rm -it -v ${VOLUME_DBT} ${IMAGE}:latest dbt test --profiles-dir=.
 
 .PHONY: docs-generate
 docs-generate:
-	docker run --rm -it  -v ${VOLUME_DBT} -p 8080:8080 ${IMAGE} dbt docs generate --profiles-dir=.
+	docker run --pull=always --rm -it  -v ${VOLUME_DBT} -p 8080:8080 ${IMAGE}:latest dbt docs generate --profiles-dir=.
 
 .PHONY: docs-serve
 docs-serve:
-	docker run --rm -it  -v ${VOLUME_DBT} -p 8080:8080 ${IMAGE} dbt docs serve --port=8080 --profiles-dir=.
-
-.PHONY: run-deps
-run-deps:
-	docker run --rm  -v ${VOLUME_DBT} -it ${IMAGE} dbt deps --profiles-dir=.
+	docker run --pull=always --rm -it  -v ${VOLUME_DBT} -p 8080:8080 ${IMAGE}:latest dbt docs serve --port=8080 --profiles-dir=.

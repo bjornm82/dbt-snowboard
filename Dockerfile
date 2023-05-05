@@ -11,6 +11,8 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
     apt-get clean
 
+COPY my_project/ /usr/app/my_project/
+
 WORKDIR /usr/app/my_project/
 
 CMD [ "dbt", "--version" ]

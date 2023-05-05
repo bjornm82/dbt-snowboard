@@ -41,7 +41,7 @@ models:
             tests:
               - unique
               - not_null
-    latest_version: 1
+    latest_version: uat
 
   - name: my_third_dbt_model
     group: customer_success
