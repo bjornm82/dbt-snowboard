@@ -25,7 +25,7 @@ build:
 
 .PHONY: tag-latest
 tag-latest:
-	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
+	docker tag ${IMAGE}:${DBT_VERSION} ${IMAGE}:latest
 
 .PHONY: push
 push:
