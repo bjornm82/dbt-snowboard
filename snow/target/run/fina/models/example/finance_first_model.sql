@@ -1,6 +1,8 @@
 
-  create view "postgres"."public_finance"."finance_first_model__dbt_tmp" as (
+  create view "postgres"."public_finance"."first_model__dbt_tmp" as (
     -- Use the `ref` function to select from other models
+
+
 
 select *
 from "postgres"."public_marketing"."first_model"
