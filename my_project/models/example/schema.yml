@@ -36,12 +36,12 @@ models:
       - v: uat
         columns:
           - name: id
-            data_type: int
+            data_type: varchar
             description: "The main primary key for this table"
             tests:
               - unique
               - not_null
-    latest_version: uat
+    latest_version: 1
 
   - name: my_third_dbt_model
     group: customer_success
